@@ -1,0 +1,16 @@
+{
+  "repository": "/home/sahil/Workspace/Repo_Analyzer/environmental-social-and-governance-compliance-system",
+  "repository_name": "environmental-social-and-governance-compliance-system",
+  "total_files": 22,
+  "files_processed": 22,
+  "files_with_errors": 0,
+  "total_directories": 7,
+  "total_functions": 10,
+  "total_methods": 59,
+  "total_classes": 17,
+  "total_imports": 191,
+  "total_calls": 541,
+  "total_variables": 234,
+  "total_decorators": 11,
+  "analysis_timestamp": "2025-10-22T23:41:13.394866"
+}

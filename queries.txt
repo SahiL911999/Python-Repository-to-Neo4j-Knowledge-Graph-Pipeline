@@ -1,0 +1,13 @@
+MATCH path = (r:Repository)-[:CONTAINS|DEFINES*1..4]->(n)
+RETURN path
+LIMIT 200
+
+
+MATCH path = (r:Repository)-[:CONTAINS|DEFINES|HAS_PARAMETER*1..6]->(n)
+RETURN path
+LIMIT 400
+
+
+MATCH path = (r:Repository)-[*1..7]->(n)
+RETURN path
+LIMIT 800
