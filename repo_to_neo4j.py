@@ -28,12 +28,17 @@ import json
 import os
 import sys
 import subprocess
+from datetime import datetime
+import re
+
 from pathlib import Path
 from typing import Dict, List, Tuple, Set, Optional, Any
 from dataclasses import dataclass, asdict, field
 from collections import defaultdict
 from enum import Enum
 from datetime import datetime
+from git_clone import clone_repo
+
 
 # Try to import Neo4j driver, install if needed
 try:
@@ -51,6 +56,30 @@ try:
 except ImportError:
     DOTENV_AVAILABLE = False
 
+# ===== EMBEDDING IMPORTS =====
+try:
+    from embeddings import (
+        embed_functions,
+        embed_files,
+        embed_methods,
+        embed_classes,
+        verify
+    )
+    # Try to import close_driver, but make it optional
+    try:
+        from embeddings import close_driver
+    except ImportError:
+        close_driver = lambda: None  # No-op function if not available
+    
+    EMBEDDING_AVAILABLE = True
+except ImportError:
+    EMBEDDING_AVAILABLE = False
+    # Create dummy functions if embeddings module is not available
+    embed_functions = lambda: None
+    embed_files = lambda: None
+    embed_classes = lambda: None
+    verify = lambda: None
+    close_driver = lambda: None
 
 # ============================================================================
 # ENUMS AND DATA STRUCTURES
@@ -138,6 +167,85 @@ def print_section(title: str):
     print(f"📌 {title}")
     print(f"{'─' * 80}")
 
+def generate_embedding_text(node_type: str, **kwargs) -> str:
+    """
+    Generate text for embedding.
+    Priority: Docstring → Code Snippet → Metadata only
+    """
+    
+    docstring = kwargs.get('docstring') or ""
+    snippet = kwargs.get('snippet') or ""
+    
+    if node_type == "File":
+        parts = [f"File: {kwargs.get('name', '')}"]
+        if kwargs.get('module'):
+            parts.append(f"Module: {kwargs['module']}")
+        
+        # Priority: docstring first, then snippet
+        if docstring:
+            parts.append(f"Documentation:\n{docstring}")
+        elif snippet:
+            parts.append(f"Code Preview:\n{snippet[:800]}")
+        
+        return " | ".join(parts)
+    
+    elif node_type == "Function":
+        parts = [f"Function: {kwargs.get('name', '')}"]
+        
+        # Add signature info
+        if kwargs.get('parameters'):
+            param_list = [f"{p['name']}" for p in kwargs['parameters']]
+            parts.append(f"Args: ({', '.join(param_list)})")
+        
+        if kwargs.get('return_type'):
+            parts.append(f"Returns: {kwargs['return_type']}")
+        
+        # Priority: docstring first, then snippet
+        if docstring:
+            parts.append(f"Documentation:\n{docstring}")
+        elif snippet:
+            parts.append(f"Code:\n{snippet[:800]}")
+        
+        return " | ".join(parts)
+    
+    elif node_type == "Method":
+        parts = [f"Method: {kwargs.get('name', '')}"]
+        
+        # Add signature info
+        if kwargs.get('parameters'):
+            param_list = [f"{p['name']}" for p in kwargs['parameters']]
+            parts.append(f"Args: ({', '.join(param_list)})")
+        
+        if kwargs.get('return_type'):
+            parts.append(f"Returns: {kwargs['return_type']}")
+        
+        # Priority: docstring first, then snippet
+        if docstring:
+            parts.append(f"Documentation:\n{docstring}")
+        elif snippet:
+            parts.append(f"Code:\n{snippet[:800]}")
+        
+        return " | ".join(parts)
+    
+    elif node_type == "Class":
+        parts = [f"Class: {kwargs.get('name', '')}"]
+        
+        # Add inheritance
+        if kwargs.get('bases') and kwargs['bases'] != ['object']:
+            parts.append(f"Inherits: {', '.join(kwargs['bases'])}")
+        
+        # Priority: docstring first, then snippet
+        if docstring:
+            parts.append(f"Documentation:\n{docstring}")
+        elif snippet:
+            parts.append(f"Code:\n{snippet[:800]}")
+        
+        return " | ".join(parts)
+    
+    return ""
+
+
+
 
 # ============================================================================
 # REPOSITORY ANALYZER
@@ -146,10 +254,11 @@ def print_section(title: str):
 class ComprehensiveExtractor(ast.NodeVisitor):
     """Enhanced AST visitor for comprehensive code extraction with hierarchy"""
     
-    def __init__(self, repo_root: Path, file_path: Path, src: str):
+    def __init__(self, repo_root: Path, file_path: Path, src: str, tree: ast.AST = None):
         self.repo_root = repo_root
         self.file_path = file_path
         self.src = src
+        self.tree = tree
         self.nodes: List[Dict] = []
         self.edges: List[Dict] = []
         
@@ -172,6 +281,9 @@ class ComprehensiveExtractor(ast.NodeVisitor):
         self.file_id = stable_id(str(self.file_path))
     
     def _get_current_scope(self) -> str:
+        """
+        This is my doc string for the _get_current_scope method.
+        """
         return self.current_scope_stack[-1] if self.current_scope_stack else self.file_id
     
     def record_file_node(self) -> str:
@@ -190,10 +302,24 @@ class ComprehensiveExtractor(ast.NodeVisitor):
             "extension": self.file_path.suffix,
             "sha1": sha1_hex(self.src),
             "lines_of_code": len(lines),
+            "source_code": self.src,
             "size_bytes": len(self.src.encode('utf-8')),
             "language": "python",
             "encoding": "utf-8"
         }
+        # Extract file-level docstring
+        file_docstring = None
+        if hasattr(self, 'tree') and self.tree:
+            file_docstring = ast.get_docstring(self.tree)
+        node["embedding_semantics"] = generate_embedding_text(
+            "File",
+            module=module_name,
+            name=self.file_path.name,              # ← ADD FILE NAME
+            path=str(self.file_path),
+            relpath=relpath,
+            docstring=file_docstring              # ← ADD FILE DOCSTRING
+        )
+
         self.nodes.append(node)
         self.current_scope_stack.append(self.file_id)
         return self.file_id
@@ -227,13 +353,180 @@ class ComprehensiveExtractor(ast.NodeVisitor):
         if isinstance(node, ast.Name):
             parts.append(node.id)
         return ".".join(reversed(parts))
+    def _parse_docstring(self, docstring: str) -> Dict[str, Any]:
+        """Parse structured docstrings (Google, NumPy, reStructuredText)"""
+        if not docstring:
+            return {}
+        
+        parsed = {
+            "summary": "",
+            "description": "",
+            "parameters": [],
+            "returns": None,
+            "raises": [],
+            "examples": [],
+            "notes": [],
+            "attributes": [],
+            "style": "unknown"
+        }
+        
+        lines = docstring.strip().split('\n')
+        if not lines:
+            return parsed
+        
+        parsed["summary"] = lines[0].strip()
+        
+        # Detect docstring style
+        doc_lower = docstring.lower()
+        if 'args:' in doc_lower or 'arguments:' in doc_lower or 'parameters:' in doc_lower:
+            if 'returns:' in doc_lower or 'yields:' in doc_lower:
+                parsed["style"] = "google"
+                parsed.update(self._parse_google_docstring(docstring))
+        elif ':param' in docstring or ':return' in docstring:
+            parsed["style"] = "rst"
+            parsed.update(self._parse_rst_docstring(docstring))
+        else:
+            if len(lines) > 1:
+                parsed["description"] = '\n'.join(lines[1:]).strip()
+        
+        return parsed
     
+    def _parse_google_docstring(self, docstring: str) -> Dict[str, Any]:
+        """Parse Google-style docstring"""
+        result = {"parameters": [], "returns": None, "raises": [], "examples": [], "notes": []}
+        lines = docstring.split('\n')
+        current_section = None
+        section_content = []
+        
+        for line in lines:
+            stripped = line.strip().lower()
+            if stripped.startswith('args:') or stripped.startswith('parameters:'):
+                if current_section and section_content:
+                    self._process_google_section(current_section, section_content, result)
+                current_section = 'parameters'
+                section_content = []
+            elif stripped.startswith('returns:') or stripped.startswith('return:'):
+                if current_section and section_content:
+                    self._process_google_section(current_section, section_content, result)
+                current_section = 'returns'
+                section_content = []
+            elif stripped.startswith('raises:') or stripped.startswith('raise:'):
+                if current_section and section_content:
+                    self._process_google_section(current_section, section_content, result)
+                current_section = 'raises'
+                section_content = []
+            elif stripped.startswith('examples:') or stripped.startswith('example:'):
+                if current_section and section_content:
+                    self._process_google_section(current_section, section_content, result)
+                current_section = 'examples'
+                section_content = []
+            elif stripped.startswith('notes:') or stripped.startswith('note:'):
+                if current_section and section_content:
+                    self._process_google_section(current_section, section_content, result)
+                current_section = 'notes'
+                section_content = []
+            elif current_section:
+                section_content.append(line)
+        
+        # Process last section
+        if current_section and section_content:
+            self._process_google_section(current_section, section_content, result)
+        
+        return result
+    
+    def _process_google_section(self, section: str, lines: List[str], result: Dict):
+        """Process a section from Google-style docstring"""
+        content = '\n'.join(lines).strip()
+        
+        if section == 'parameters':
+            for line in lines:
+                if not line.strip():
+                    continue
+                match = re.match(r'^\s*(\w+)\s*\(([^)]+)\)\s*:\s*(.+)', line)
+                if match:
+                    result["parameters"].append({
+                        "name": match.group(1),
+                        "type": match.group(2),
+                        "description": match.group(3)
+                    })
+        elif section == 'returns':
+            result["returns"] = {"type": None, "description": content}
+            match = re.match(r'^\s*([^:]+):\s*(.+)', content, re.DOTALL)
+            if match:
+                result["returns"] = {"type": match.group(1).strip(), "description": match.group(2).strip()}
+        elif section == 'raises':
+            for line in lines:
+                if not line.strip():
+                    continue
+                match = re.match(r'^\s*(\w+)\s*:\s*(.+)', line)
+                if match:
+                    result["raises"].append({
+                        "exception": match.group(1),
+                        "description": match.group(2)
+                    })
+        elif section == 'examples':
+            result["examples"].append(content)
+        elif section == 'notes':
+            result["notes"].append(content)
+    
+    def _parse_rst_docstring(self, docstring: str) -> Dict[str, Any]:
+        """Parse reStructuredText-style docstring"""
+        result = {"parameters": [], "returns": None, "raises": [], "examples": [], "notes": []}
+        lines = docstring.split('\n')
+        
+        for line in lines:
+            # :param name: description
+            if ':param' in line:
+                match = re.search(r':param\s+(\w+):\s*(.+)', line)
+                if match:
+                    result["parameters"].append({
+                        "name": match.group(1),
+                        "type": None,
+                        "description": match.group(2)
+                    })
+            # :type name: type
+            elif ':type' in line:
+                match = re.search(r':type\s+(\w+):\s*(.+)', line)
+                if match and result["parameters"]:
+                    for param in result["parameters"]:
+                        if param["name"] == match.group(1):
+                            param["type"] = match.group(2)
+            # :return: or :returns:
+            elif ':return' in line and ':rtype' not in line:
+                match = re.search(r':returns?:\s*(.+)', line)
+                if match:
+                    if not result["returns"]:
+                        result["returns"] = {"type": None, "description": ""}
+                    result["returns"]["description"] = match.group(1)
+            # :rtype: type
+            elif ':rtype:' in line:
+                match = re.search(r':rtype:\s*(.+)', line)
+                if match:
+                    if not result["returns"]:
+                        result["returns"] = {"type": None, "description": ""}
+                    result["returns"]["type"] = match.group(1)
+            # :raises Exception: description
+            elif ':raises' in line or ':raise' in line:
+                match = re.search(r':raises?\s+(\w+):\s*(.+)', line)
+                if match:
+                    result["raises"].append({
+                        "exception": match.group(1),
+                        "description": match.group(2)
+                    })
+        
+        return result
+
+
     def visit_Import(self, node: ast.Import):
         """Extract regular imports"""
         for alias in node.names:
             target = alias.name
             import_alias = alias.asname or alias.name
             self.imports_map[import_alias] = target
+            
+                        # Check if this is a function-level import
+            is_function_level = self.current_function is not None
+            scope_id = self.current_function if is_function_level else self.file_id
             
             import_id = stable_id(self.file_id, "import", target, str(node.lineno))
             self.nodes.append({
@@ -245,14 +538,17 @@ class ComprehensiveExtractor(ast.NodeVisitor):
                 "lineno": node.lineno,
                 "is_stdlib": self._is_stdlib(target),
                 "is_relative": False,
-                "level": 0
+                "level": 0,
+                "is_function_level": is_function_level,
+                "scope": "function" if is_function_level else "module"
             })
             
             self.edges.append({
                 "type": EdgeType.IMPORTS.value,
-                "from_id": self.file_id,
+                "from_id": scope_id,
                 "to_id": import_id,
                 "lineno": node.lineno,
+                "scope": "function" if is_function_level else "module"
             })
             self.stats["imports"] += 1
         
@@ -268,6 +564,10 @@ class ComprehensiveExtractor(ast.NodeVisitor):
             import_alias = alias.asname or alias.name
             self.imports_map[import_alias] = target
             
+                        # Check if this is a function-level import
+            is_function_level = self.current_function is not None
+            scope_id = self.current_function if is_function_level else self.file_id
+            
             import_id = stable_id(self.file_id, "import", target, str(node.lineno))
             self.nodes.append({
                 "id": import_id,
@@ -281,13 +581,16 @@ class ComprehensiveExtractor(ast.NodeVisitor):
                 "is_relative": level > 0,
                 "lineno": node.lineno,
                 "is_stdlib": self._is_stdlib(module) if module else False,
+                "is_function_level": is_function_level,
+                "scope": "function" if is_function_level else "module"
             })
             
             self.edges.append({
                 "type": EdgeType.IMPORTS.value,
-                "from_id": self.file_id,
+                "from_id": scope_id,
                 "to_id": import_id,
                 "lineno": node.lineno,
+                "scope": "function" if is_function_level else "module"
             })
             self.stats["imports"] += 1
         
@@ -422,6 +725,23 @@ class ComprehensiveExtractor(ast.NodeVisitor):
         
         return "\n".join(snippet_lines)
     
+    def _get_full_source_code(self, node: ast.AST) -> str:
+        """Extract complete source code for the function/method"""
+        try:
+            # Method 1: Use ast.get_source_segment (Python 3.8+)
+            full_code = ast.get_source_segment(self.src, node, padded=False)
+            if full_code:
+                return full_code
+        except Exception:
+            pass
+        
+        # Method 2: Fallback to line-based extraction
+        lines = self.src.splitlines()
+        start = max(0, node.lineno - 1)
+        end = min(len(lines), getattr(node, "end_lineno", node.lineno))
+        return "\n".join(lines[start:end])
+
+
     def _record_function(self, node: ast.FunctionDef) -> str:
         """Record function with comprehensive metadata"""
         is_method = self.current_class is not None
@@ -433,13 +753,16 @@ class ComprehensiveExtractor(ast.NodeVisitor):
         parameters = self._extract_parameters(node.args)
         metrics = self._compute_metrics(node)
         snippet = self._get_source_snippet(node)
+        full_source_code = self._get_full_source_code(node)
         doc = ast.get_docstring(node)
+        parsed_doc = self._parse_docstring(doc) if doc else {}
         return_type = self._safe_unparse(node.returns) if node.returns else None
+
         
         self.defined_names[node.name] = fn_id
         node_type = NodeType.METHOD if is_method else NodeType.FUNCTION
-        
-        self.nodes.append({
+    
+        function_node = {
             "id": fn_id,
             "type": node_type.value,
             "name": node.name,
@@ -458,10 +781,26 @@ class ComprehensiveExtractor(ast.NodeVisitor):
             "lineno": node.lineno,
             "end_lineno": getattr(node, "end_lineno", None),
             "docstring": doc,
+            "parsed_docstring": parsed_doc,
             "snippet": snippet[:500] if len(snippet) > 500 else snippet,
+            "full_source_code": full_source_code,
             "metrics": asdict(metrics),
-        })
-        
+        }
+
+        # Add embedding
+        # Add embedding - use correct node type
+        node_type_for_embedding = "Method" if is_method else "Function"
+        function_node["embedding_semantics"] = generate_embedding_text(
+            node_type_for_embedding,
+            name=node.name,
+            parameters=parameters,
+            return_type=return_type,
+            docstring=doc,
+            snippet=snippet
+)
+
+        self.nodes.append(function_node)
+
         self.edges.append({
             "type": EdgeType.DEFINES.value,
             "from_id": parent_scope,
@@ -527,8 +866,9 @@ class ComprehensiveExtractor(ast.NodeVisitor):
         class_id = stable_id(self.file_path, "class", node.name, str(node.lineno))
         
         snippet = self._get_source_snippet(node)
+        full_source_code = self._get_full_source_code(node)
         doc = ast.get_docstring(node)
-        
+        parsed_doc = self._parse_docstring(doc) if doc else {}
         bases = [self._safe_unparse(b) for b in node.bases if self._safe_unparse(b)]
         decorators = []
         for dec in node.decorator_list:
@@ -544,21 +884,36 @@ class ComprehensiveExtractor(ast.NodeVisitor):
         
         self.defined_names[node.name] = class_id
         
-        self.nodes.append({
+        class_node = {
             "id": class_id,
             "type": NodeType.CLASS.value,
             "name": node.name,
             "lineno": node.lineno,
             "end_lineno": getattr(node, "end_lineno", None),
             "docstring": doc,
+            "parsed_docstring": parsed_doc,
             "snippet": snippet[:500] if len(snippet) > 500 else snippet,
+            "full_source_code": full_source_code,
             "bases": bases,
             "decorators": decorators,
             "num_methods": len(methods),
             "num_class_vars": len(class_vars),
             "is_private": node.name.startswith('_'),
             "is_abstract": 'ABC' in bases or 'abc.ABC' in bases,
-        })
+        }
+
+        # Add embedding
+        class_node["embedding_semantics"] = generate_embedding_text(
+            "Class",
+            name=node.name,
+            bases=bases,
+            docstring=doc,
+            snippet=snippet  # ← ADD THIS LINE
+        )
+
+
+        self.nodes.append(class_node)
+
         
         self.edges.append({
             "type": EdgeType.DEFINES.value,
@@ -724,7 +1079,7 @@ def extract_file(repo_root: Path, file_path: Path) -> Tuple[List[Dict], List[Dic
         print(f"[ERROR] Parse error in {file_path}: {e}")
         return [], [], {}
     
-    extractor = ComprehensiveExtractor(repo_root, file_path, src)
+    extractor = ComprehensiveExtractor(repo_root, file_path, src, tree)
     extractor.record_file_node()
     
     try:
@@ -925,6 +1280,112 @@ class Neo4jRepositoryLoader:
                     pass
         
         print("✅ Constraints created")
+        print("✅ Indexes created")
+
+
+    def create_vector_indexes(self):
+        """
+        Create vector indexes on embedding_semantics property.
+        First verifies that nodes with embedding_semantics exist.
+        """
+        print("🧠 Creating vector indexes on embedding_semantics...")
+        
+        with self.driver.session() as session:
+        # Step 1: Verify embedding_semantics property exists
+            print("   📊 Verifying embedding_semantics data...")
+        verification_query = """
+        MATCH (n) 
+        WHERE n.embedding_semantics IS NOT NULL 
+        RETURN labels(n) AS node_labels, count(n) AS count_with_embeddings 
+        ORDER BY count_with_embeddings DESC
+        """
+        
+        try:
+            result = session.run(verification_query)
+            records = result.data()
+            
+            if not records:
+                print("   ⚠️  No nodes with embedding_semantics found. Skipping vector index creation.")
+                return False
+            
+            # Print verification results
+            print("   ✅ Found embedding_semantics on:")
+            total_embedded = 0
+            for record in records:
+                labels = record['node_labels']
+                count = record['count_with_embeddings']
+                label_str = f"[{', '.join(labels)}]"
+                print(f"      • {label_str}: {count} nodes")
+                total_embedded += count
+            
+            print(f"   📈 Total nodes with embeddings: {total_embedded}")
+            
+        except Exception as e:
+            print(f"   ⚠️  Verification query failed: {e}")
+            return False
+        
+        # Step 2: Create vector indexes for each node type
+        print("   🔨 Creating vector indexes...")
+        
+        # Create separate indexes for each label type
+        # NOTE: Using simplified syntax without vector.dimensions in OPTIONS
+        vector_index_queries = [
+            {
+                "name": "file-embeddings",
+                "query": """
+                CREATE VECTOR INDEX `file-embeddings` IF NOT EXISTS 
+                FOR (n:File) ON (n.embedding_semantics)
+                """,
+                "label": "File"
+            },
+            {
+                "name": "class-embeddings",
+                "query": """
+                CREATE VECTOR INDEX `class-embeddings` IF NOT EXISTS 
+                FOR (n:Class) ON (n.embedding_semantics)
+                """,
+                "label": "Class"
+            },
+            {
+                "name": "function-embeddings",
+                "query": """
+                CREATE VECTOR INDEX `function-embeddings` IF NOT EXISTS 
+                FOR (n:Function) ON (n.embedding_semantics)
+                """,
+                "label": "Function"
+            },
+            {
+                "name": "method-embeddings",
+                "query": """
+                CREATE VECTOR INDEX `method-embeddings` IF NOT EXISTS 
+                FOR (n:Method) ON (n.embedding_semantics)
+                """,
+                "label": "Method"
+            }
+        ]
+        
+        created_count = 0
+        for index_config in vector_index_queries:
+            try:
+                session.run(index_config["query"])
+                print(f"      ✅ {index_config['label']} index created")
+                created_count += 1
+            except Exception as e:
+                # Check if it's just an "already exists" error
+                if "already exists" in str(e).lower():
+                    print(f"      ℹ️  {index_config['label']} index already exists")
+                    created_count += 1
+                else:
+                    print(f"      ⚠️  {index_config['label']} index creation warning: {str(e)[:80]}")
+        
+        if created_count == 0:
+            print("   ❌ No vector indexes were created")
+            return False
+        
+        print(f"   ✅ {created_count} vector indexes created successfully")
+        return True
+
+
     
     def load_jsonl(self, filepath: Path) -> List[Dict]:
         """Load JSONL file"""
@@ -1239,10 +1700,16 @@ def load_to_neo4j(output_dir: Path, neo4j_uri: str, neo4j_user: str, neo4j_pass:
         else:
             print("✅ Database is empty")
         
-        # Create constraints
+        # Phase 1: Create constraints and regular indexes (NO vector index yet)
+        print("\n" + "="*80)
+        print("PHASE 1: Creating Constraints and Indexes")
+        print("="*80)
         loader.create_constraints_and_indexes()
         
-        # Load data
+        # Phase 2: Load data
+        print("\n" + "="*80)
+        print("PHASE 2: Loading Graph Data")
+        print("="*80)
         nodes = loader.load_jsonl(nodes_path)
         edges = loader.load_jsonl(edges_path)
         
@@ -1252,11 +1719,12 @@ def load_to_neo4j(output_dir: Path, neo4j_uri: str, neo4j_user: str, neo4j_pass:
         loader.close()
         
         print("\n" + "="*80)
-        print("✅ NEO4J LOADING COMPLETE")
+        print("✅ PHASE 2 COMPLETE: Graph Data Loaded")
         print("="*80)
         print(f"📊 Summary:")
         print(f"   Nodes: {nodes_inserted}")
         print(f"   Relationships: {edges_inserted}")
+        print(f"   Property: embedding_semantics (text)")
         print("="*80)
         
         return True
@@ -1268,8 +1736,10 @@ def load_to_neo4j(output_dir: Path, neo4j_uri: str, neo4j_user: str, neo4j_pass:
         return False
 
 
+
+
 def main():
-    """Main execution"""
+    """Main execution with 4-phase pipeline"""
     
     print_header("PYTHON REPOSITORY → NEO4J KNOWLEDGE GRAPH PIPELINE")
     print("Production-Ready Code Analysis and Graph Database Loading")
@@ -1280,11 +1750,14 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-    # Analyze and load
+    # Analyze and load (text embeddings only)
     python repo_to_neo4j.py --repo /path/to/repository
     
+    # Analyze, load, and generate vector embeddings
+    python repo_to_neo4j.py --repo ~/projects/django --with-embeddings
+    
     # Clean and regenerate
-    python repo_to_neo4j.py --repo ~/projects/django --clean
+    python repo_to_neo4j.py --repo ~/projects/django --clean --with-embeddings
     
     # Only analyze (skip Neo4j)
     python repo_to_neo4j.py --repo ./my_project --skip-neo4j
@@ -1293,21 +1766,33 @@ Examples:
     python repo_to_neo4j.py --repo ~/code --exclude tests .venv docs
         """
     )
-    
-    parser.add_argument("--repo", required=True, help="Path to Python repository")
+    parser.add_argument("--remote_repo", help="Url of Github repo")
+    parser.add_argument("--branch", help="Branch of Github repo")
+    parser.add_argument("--repo", help="Path to Python repository")
     parser.add_argument("--output", help="Output directory (default: graph_data/<repo_name>)")
     parser.add_argument("--exclude", nargs="+", help="Additional directories to exclude")
     parser.add_argument("--clean", action="store_true", help="Clean existing data before analysis")
     parser.add_argument("--skip-neo4j", action="store_true", help="Skip Neo4j loading")
     parser.add_argument("--force-clear", action="store_true", help="Automatically clear Neo4j database")
+    parser.add_argument("--with-embeddings", action="store_true", help="Generate OpenAI vector embeddings after loading to Neo4j (requires OPENAI_API_KEY)")
     
     args = parser.parse_args()
     
     # Resolve repository path
-    repo_path = Path(args.repo).resolve()
-    if not repo_path.exists():
-        print(f"❌ Repository path does not exist: {repo_path}")
-        sys.exit(1)
+    if args.remote_repo:
+        if args.branch:
+            branch_name=args.branch
+            repo_path=clone_repo(repo_url=args.remote_repo,branch_name=branch_name)
+        else:
+            repo_path=clone_repo(args.remote_repo)
+        # print(repo_path)
+    if args.repo:
+        repo_path = Path(args.repo).resolve()
+    if repo_path is None:
+        return True
+    # if not repo_path.exists():
+    #     print(f"❌ Repository path does not exist: {repo_path}")
+    #     sys.exit(1)
     
     # Setup output directory
     if args.output:
@@ -1322,8 +1807,13 @@ Examples:
     print(f"   Output Directory: {output_dir}")
     if args.exclude:
         print(f"   Excluded: {', '.join(args.exclude)}")
+    print(f"   With Embeddings: {'Yes' if args.with_embeddings else 'No'}")
     
-    # Step 1: Analyze Repository
+    # ===== PHASE 1: ANALYZE REPOSITORY =====
+    print("\n" + "="*80)
+    print("PHASE 1: ANALYZING REPOSITORY & CREATING GRAPH DATA")
+    print("="*80)
+    
     success = analyze_repository(
         repo_path=repo_path,
         output_dir=output_dir,
@@ -1335,8 +1825,17 @@ Examples:
         print("❌ Analysis failed")
         sys.exit(1)
     
-    # Step 2: Load to Neo4j (if not skipped)
+    print("\n✅ PHASE 1 COMPLETE: Graph data created with text embeddings")
+    print(f"   • nodes.jsonl created")
+    print(f"   • edges.jsonl created")
+    print(f"   • embedding_semantics property: TEXT (semantic descriptions)")
+    
+    # ===== PHASE 2: LOAD TO NEO4J =====
     if not args.skip_neo4j:
+        print("\n" + "="*80)
+        print("PHASE 2: LOADING GRAPH DATA TO NEO4J")
+        print("="*80)
+        
         # Get Neo4j credentials
         neo4j_uri = os.environ.get("NEO4J_URI")
         neo4j_user = os.environ.get("NEO4J_USERNAME")
@@ -1363,15 +1862,128 @@ Examples:
                 print("❌ Neo4j loading failed")
                 sys.exit(1)
             
-            print(f"\n💡 Next Steps:")
-            print(f"   1. Open Neo4j Browser")
-            print(f"   2. Try: MATCH path = (r:Repository)-[:CONTAINS|DEFINES*1..4]->(n) RETURN path LIMIT 200")
-            print(f"   3. Explore your repository's knowledge graph!")
+            print("\n✅ PHASE 2 COMPLETE: Graph data loaded to Neo4j")
+            print(f"   • Nodes inserted with text embeddings")
+            print(f"   • Relationships created")
+            
+            # ===== PHASE 3: CREATE VECTOR INDEXES =====
+            if args.with_embeddings:
+                print("\n" + "="*80)
+                print("PHASE 3: CREATING VECTOR INDEXES ON EMBEDDING PROPERTY")
+                print("="*80)
+                
+                try:
+                    loader = Neo4jRepositoryLoader(neo4j_uri, neo4j_user, neo4j_pass)
+                    loader.create_vector_indexes()
+                    loader.close()
+                    
+                    print("\n✅ PHASE 3 COMPLETE: Vector indexes created")
+                    print(f"   • Index name: code-semantics")
+                    print(f"   • Dimensions: 3072")
+                    print(f"   • Similarity: cosine")
+                    
+                except Exception as e:
+                    print(f"\n⚠️  Vector index creation warning: {e}")
+                    print("   Continuing with embedding generation...")
+                
+                # ===== PHASE 4: GENERATE VECTOR EMBEDDINGS =====
+                print("\n" + "="*80)
+                print("PHASE 4: GENERATING VECTOR EMBEDDINGS (OpenAI)")
+                print("="*80)
+                
+                if not EMBEDDING_AVAILABLE:
+                    print("\n❌ Cannot generate embeddings: embedding module not found")
+                    print("   Make sure your embedding file is in the same directory")
+                    print("   Expected files: embeddings.py, openai_embeddings.py, or embedding.py")
+                    return False
+                
+                try:
+                    print("\n📊 Starting embedding generation...")
+                    print("   This may take a while depending on the number of nodes")
+                    print("   Rate limit: 1 second between requests (60 req/min)\n")
+                    
+                    embed_functions()
+                    embed_files()
+                    embed_methods()
+                    embed_classes()
+                    verify()
+                    
+                    print("\n✅ PHASE 4 COMPLETE: Vector embeddings generated")
+                    print(f"   • Text embeddings replaced with OpenAI vectors")
+                    print(f"   • embedding_semantics property: VECTOR (3072 dimensions)")
+                    print(f"   • Ready for semantic search queries")
+                    
+                except Exception as e:
+                    print(f"\n❌ Embedding generation failed: {e}")
+                    import traceback
+                    traceback.print_exc()
+                    return False
+                
+                finally:
+                    # Close the embedding module's Neo4j driver
+                    try:
+                        close_driver()
+                    except:
+                        pass
+            else:
+                print("\n⏭️  Vector embeddings skipped (use --with-embeddings flag to enable)")
+                print("   Current embedding_semantics: TEXT (semantic descriptions)")
+                print("   To upgrade to vector embeddings, run with --with-embeddings flag")
+    else:
+        print("\n⏭️  Neo4j loading skipped (--skip-neo4j flag used)")
+        print("   Graph data generated in: {output_dir}")
     
+    # ===== COMPLETION =====
     print("\n" + "="*80)
-    print("✅ PIPELINE COMPLETE!")
+    print("✅ COMPLETE PIPELINE FINISHED!")
     print("="*80)
+    
+    print(f"\n📊 Pipeline Summary:")
+    print(f"   ✓ Phase 1: Repository analyzed and graph data created")
+    print(f"   ✓ Phase 2: Data loaded to Neo4j")
+    if args.with_embeddings and not args.skip_neo4j:
+        print(f"   ✓ Phase 3: Vector indexes created")
+        print(f"   ✓ Phase 4: Vector embeddings generated (OpenAI)")
+    else:
+        print(f"   • Phase 3: Vector indexes (pending --with-embeddings)")
+        print(f"   • Phase 4: Vector embeddings (pending --with-embeddings)")
+    
+    print(f"\n💡 Next Steps:")
+    print(f"   1. Open Neo4j Browser: http://localhost:7474")
+    print(f"   2. Try these queries:")
+    print(f"")
+    print(f"      # Explore repository structure")
+    print(f"      MATCH path = (r:Repository)-[:CONTAINS|DEFINES*1..4]->(n)")
+    print(f"      RETURN path LIMIT 200")
+    print(f"")
+    print(f"      # View all nodes with embeddings")
+    print(f"      MATCH (n) WHERE n.embedding_semantics IS NOT NULL")
+    print(f"      RETURN labels(n) AS node_labels, count(n) AS count_with_embeddings")
+    print(f"      ORDER BY count_with_embeddings DESC")
+    
+    if args.with_embeddings and not args.skip_neo4j:
+        print(f"")
+        print(f"      # Semantic search (vector similarity)")
+        print(f"      WITH {{'query': 'database connection'}} AS input")
+        print(f"      CALL db.index.vector.queryNodes('code-semantics', 5, input.query)")
+        print(f"      YIELD node, score")
+        print(f"      RETURN node.name, score")
+    
+    print(f"\n" + "="*80)
+    
+    return True
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        success = main()
+        sys.exit(0 if success else 1)
+    except KeyboardInterrupt:
+        print("\n\n⚠️  Interrupted by user")
+        print("   Graph data has been saved. You can resume from where you left off.")
+        sys.exit(1)
+    except Exception as e:
+        print(f"\n✗ Error: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)

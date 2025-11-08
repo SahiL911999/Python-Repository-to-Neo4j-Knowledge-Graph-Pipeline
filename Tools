@@ -1,0 +1,29 @@
+
+Text2Cypher Tool 
+Name: Tool for system-wide aggregation questions
+
+Description: **Purpose:**
+Answer repo-graph questions and generate **Cypher queries with visual graph results** (nodes + relationships) for Neo4j.
+
+**Schema:**
+**Nodes:** Repository, Directory, File, Class, Function, Method, Variable, Parameter, Module, Decorator.
+**Rels:** CONTAINS, DEFINES, CALLS, IMPORTS, HAS_PARAMETER.
+
+
+Similarity Search Tools
+
+Name: Find Similar Functions
+
+Description: Search for functions similar to a query
+
+
+
+Find Similar Files
+
+Description: Search for files  similar to a query
+
+
+
+Find Similar Classes
+
+Description: Search for classes similar to a query

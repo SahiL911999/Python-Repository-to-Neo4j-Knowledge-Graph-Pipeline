@@ -1,13 +1,82 @@
-MATCH path = (r:Repository)-[:CONTAINS|DEFINES*1..4]->(n)
-RETURN path
-LIMIT 200
+Natural Language Query Examples (for your Repo Graph)
+🗂️ Repository / Structure Level
 
+“Show me all directories inside the repository.”
 
-MATCH path = (r:Repository)-[:CONTAINS|DEFINES|HAS_PARAMETER*1..6]->(n)
-RETURN path
-LIMIT 400
+“List all files contained in the src directory.”
 
+“What are the subdirectories under src/components?”
 
-MATCH path = (r:Repository)-[*1..7]->(n)
-RETURN path
-LIMIT 800
+“How many Python files are in the project?”
+
+“Show all files that are more than 200 lines of code.”
+
+🧱 Classes and Functions
+
+“What classes are defined in database_ops.py?”
+
+“List all functions defined inside the DBOps class.”
+
+“Which file defines the class DBOps?”
+
+“What are the function names and their IDs in the database_ops.py file?”
+
+“Find all functions whose names include the word ‘pipeline’.”
+
+“Show me all functions that have a complexity greater than 3.”
+
+“Which functions have more than 50 lines of code?”
+
+“What are the async functions defined in the project?”
+
+“Which functions don’t have a docstring?”
+
+🧩 Variables and Data Flow
+
+“List all variables defined inside the function test_self_query_pipeline_langfuse.”
+
+“Show the value assigned to the variable mp.”
+
+“Which functions define variables related to media_path?”
+
+“Find all variables that are constants.”
+
+“Show all local variables defined inside functions of the class DBOps.”
+
+🔗 Relationships and Dependencies
+
+“Show how the repository connects to the file database_ops.py.”
+
+“Display the full path from repository to the function test_self_query_pipeline_langfuse.”
+
+“Which functions call other functions?”
+
+“List all functions that call the variable mp.”
+
+“Find which file defines and calls the function test_parent_child_pipeline_langfuse.”
+
+“Which functions are defined but never called anywhere?”
+
+📊 Analytical Queries
+
+“What is the average complexity of functions in database_ops.py?”
+
+“Which file has the highest number of functions?”
+
+“Show the total number of lines of code per file.”
+
+“List the top 5 files by lines of code.”
+
+“Which functions have the deepest nesting depth?”
+
+💡 Cross-File or Project-Level Questions
+
+“Find all Python files that define more than one class.”
+
+“Which directories contain files related to database operations?”
+
+“Show all test files in the repository.”
+
+“What are the functions defined inside pipelines_test.py?”
+
+“Find all classes and functions defined in the entire project.”

@@ -4,7 +4,7 @@
   "total_files": 22,
   "files_processed": 22,
   "files_with_errors": 0,
-  "total_directories": 7,
+  "total_directories": 6,
   "total_functions": 10,
   "total_methods": 59,
   "total_classes": 17,
@@ -12,5 +12,5 @@
   "total_calls": 541,
   "total_variables": 234,
   "total_decorators": 11,
-  "analysis_timestamp": "2025-10-22T23:41:13.394866"
+  "analysis_timestamp": "2025-10-29T16:37:28.375076"
 }

@@ -1,0 +1,22 @@
+📊 Step-by-Step Recommended Approach
+1. Start Here (Overall Structure):
+
+text
+MATCH path = (r:Repository)-[:CONTAINS|DEFINES*1..4]->(n)
+RETURN path
+LIMIT 200
+
+2. Then Go Deeper (Add Parameters):
+
+text
+MATCH path = (r:Repository)-[:CONTAINS|DEFINES|HAS_PARAMETER*1..6]->(n)
+RETURN path
+LIMIT 400
+
+3. Finally Complete (Everything):
+
+text
+MATCH path = (r:Repository)-[*1..7]->(n)
+RETURN path
+LIMIT 800
+

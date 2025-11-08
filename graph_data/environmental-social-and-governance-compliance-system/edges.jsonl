@@ -1,5 +1,4 @@
 {"type": "CONTAINS", "from_id": "eef930b0bbdecdb4715ec81abc1592059f27eff8", "to_id": "5d2f78c7d2bf2bd318237a2c0b29635ab0ea15e0", "relationship": "contains_directory"}
-{"type": "CONTAINS", "from_id": "eef930b0bbdecdb4715ec81abc1592059f27eff8", "to_id": "2bea77920e778be02dde32424eb9641246f168b7", "relationship": "contains_directory"}
 {"type": "CONTAINS", "from_id": "eef930b0bbdecdb4715ec81abc1592059f27eff8", "to_id": "34331769337dc0aeb12bc4e82ca3cf851032ae05", "relationship": "contains_directory"}
 {"type": "CONTAINS", "from_id": "eef930b0bbdecdb4715ec81abc1592059f27eff8", "to_id": "8ef73b78df7b3fd1d5b9c998bd0b400026096889", "relationship": "contains_directory"}
 {"type": "CONTAINS", "from_id": "5d2f78c7d2bf2bd318237a2c0b29635ab0ea15e0", "to_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "relationship": "contains_file"}
@@ -28,10 +27,10 @@
 {"type": "CONTAINS", "from_id": "6d44e2e23e75261c0e18a113da4e4ef9aa31abda", "to_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "relationship": "contains_file"}
 {"type": "CONTAINS", "from_id": "6d44e2e23e75261c0e18a113da4e4ef9aa31abda", "to_id": "0ec20701efbc6a87cdf754102bb336f3750c77b3", "relationship": "contains_file"}
 {"type": "CALLS", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_name": "__import__", "lineno": 9, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_id": "d3eff94c0b55cdd33b20fe5d424a30180fb62ae1", "lineno": 10}
+{"type": "IMPORTS", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_id": "d3eff94c0b55cdd33b20fe5d424a30180fb62ae1", "lineno": 10, "scope": "module"}
 {"type": "CALLS", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_name": "sys.modules.pop", "lineno": 11, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_id": "3b50e60c14164b14e5cf5a6088c6de3ab83b829f", "lineno": 14}
-{"type": "IMPORTS", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_id": "547ef6b2531efb31f9b02af59e8d737252a82707", "lineno": 15}
+{"type": "IMPORTS", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_id": "3b50e60c14164b14e5cf5a6088c6de3ab83b829f", "lineno": 14, "scope": "module"}
+{"type": "IMPORTS", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_id": "547ef6b2531efb31f9b02af59e8d737252a82707", "lineno": 15, "scope": "module"}
 {"type": "DEFINES", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_id": "8db589fe470b755bdf95dd6b4ea44f13c5bb7367", "relationship": "defines_variable"}
 {"type": "CALLS", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_name": "chromadb.HttpClient", "lineno": 20, "resolved_name": null, "num_args": 0, "num_kwargs": 2, "inferred": true}
 {"type": "CALLS", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_name": "print", "lineno": 21, "resolved_name": null, "num_args": 2, "num_kwargs": 0, "inferred": true}
@@ -62,14 +61,14 @@
 {"type": "DEFINES", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_id": "f7a57322e6177659f24ed45d36abc13938d7b3f6", "relationship": "defines_variable"}
 {"type": "CALLS", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_name": "data_fetcher.fetch_data", "lineno": 74, "resolved_name": null, "num_args": 0, "num_kwargs": 2, "inferred": false, "to_id": "a5cad8b9e08f9c34945f4494ada56c58bf4a3d8f"}
 {"type": "CALLS", "from_id": "604b224275c4a74fefc7c320b3cc364ea225f2d2", "to_name": "print", "lineno": 75, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "913d163d3beb7f5d3360f5b0704ac68c67d7d5df", "lineno": 1}
-{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "a260aea0bce75985a17f1ca02905e19ee02e6c74", "lineno": 2}
-{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "4a6955de676ac65d963ccd62d711a26090a95603", "lineno": 4}
+{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "913d163d3beb7f5d3360f5b0704ac68c67d7d5df", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "a260aea0bce75985a17f1ca02905e19ee02e6c74", "lineno": 2, "scope": "module"}
+{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "4a6955de676ac65d963ccd62d711a26090a95603", "lineno": 4, "scope": "module"}
 {"type": "CALLS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_name": "sys.path.append", "lineno": 5, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "65bcb076b2e31a5bedf011a2cc208fb91b239551", "lineno": 7}
-{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "57831f35793ae2825385e9ed6375424507bc17bd", "lineno": 8}
-{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "0347b1f8df201acf58a97f2c054bc084c1ba46b0", "lineno": 9}
-{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "274eb0c62e22bb92df8420c2481e09f29afe88cf", "lineno": 11}
+{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "65bcb076b2e31a5bedf011a2cc208fb91b239551", "lineno": 7, "scope": "module"}
+{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "57831f35793ae2825385e9ed6375424507bc17bd", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "0347b1f8df201acf58a97f2c054bc084c1ba46b0", "lineno": 9, "scope": "module"}
+{"type": "IMPORTS", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "274eb0c62e22bb92df8420c2481e09f29afe88cf", "lineno": 11, "scope": "module"}
 {"type": "DEFINES", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "d9a8b6a592fddca484a9c0231dd5404441eb5c80", "relationship": "contains_function"}
 {"type": "DEFINES", "from_id": "d9a8b6a592fddca484a9c0231dd5404441eb5c80", "to_id": "80b0da7ce30bf259e8f2e8b6f4c1743d91936b9b", "relationship": "defines_variable"}
 {"type": "CALLS", "from_id": "d9a8b6a592fddca484a9c0231dd5404441eb5c80", "to_name": "os.path.dirname", "lineno": 15, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
@@ -147,29 +146,29 @@
 {"type": "CALLS", "from_id": "cfadd16e444c00829c9624f507af1ebfce8f8e96", "to_name": "mp.main_pipeline", "lineno": 78, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": false, "to_id": "74aaffe3ace8a9e02f4c572a18da3d3ba5be9586"}
 {"type": "CALLS", "from_id": "cfadd16e444c00829c9624f507af1ebfce8f8e96", "to_name": "print", "lineno": 80, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
 {"type": "CALLS", "from_id": "cfadd16e444c00829c9624f507af1ebfce8f8e96", "to_name": "pytest.fail", "lineno": 81, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "DEFINES", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "b7dfb781bc048f683f09cb5dfa97ca41fac0a417", "relationship": "contains_function"}
-{"type": "DEFINES", "from_id": "b7dfb781bc048f683f09cb5dfa97ca41fac0a417", "to_id": "cb1771494f831c407f84c3296c2e0b4e234b9529", "relationship": "defines_variable"}
-{"type": "CALLS", "from_id": "b7dfb781bc048f683f09cb5dfa97ca41fac0a417", "to_name": "os.path.dirname", "lineno": 85, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "CALLS", "from_id": "b7dfb781bc048f683f09cb5dfa97ca41fac0a417", "to_name": "os.path.dirname", "lineno": 85, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "DEFINES", "from_id": "b7dfb781bc048f683f09cb5dfa97ca41fac0a417", "to_id": "bcb78015cc7f6ab13ea352d241323b2f39e073a8", "relationship": "defines_variable"}
-{"type": "CALLS", "from_id": "b7dfb781bc048f683f09cb5dfa97ca41fac0a417", "to_name": "os.path.join", "lineno": 86, "resolved_name": null, "num_args": 2, "num_kwargs": 0, "inferred": true}
-{"type": "DEFINES", "from_id": "b7dfb781bc048f683f09cb5dfa97ca41fac0a417", "to_id": "093af4632364c9848f8d7d94f6a0266d26d765ca", "relationship": "defines_variable"}
-{"type": "CALLS", "from_id": "b7dfb781bc048f683f09cb5dfa97ca41fac0a417", "to_name": "ParentChildPipeline", "lineno": 87, "resolved_name": "pipelines.pipeline_parent_child.ParentChildPipeline", "num_args": 0, "num_kwargs": 2, "inferred": true}
-{"type": "CALLS", "from_id": "b7dfb781bc048f683f09cb5dfa97ca41fac0a417", "to_name": "mp.main_pipeline", "lineno": 88, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": false, "to_id": "093af4632364c9848f8d7d94f6a0266d26d765ca"}
-{"type": "CALLS", "from_id": "b7dfb781bc048f683f09cb5dfa97ca41fac0a417", "to_name": "print", "lineno": 90, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "CALLS", "from_id": "b7dfb781bc048f683f09cb5dfa97ca41fac0a417", "to_name": "pytest.fail", "lineno": 91, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "DEFINES", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "f27b3344b3e7e7c8ee0e00acca8151b7b2bf715c", "relationship": "contains_function"}
-{"type": "DEFINES", "from_id": "f27b3344b3e7e7c8ee0e00acca8151b7b2bf715c", "to_id": "62e9c6074b36873d5654cbd37d9d5687f5daac1a", "relationship": "defines_variable"}
-{"type": "CALLS", "from_id": "f27b3344b3e7e7c8ee0e00acca8151b7b2bf715c", "to_name": "os.path.dirname", "lineno": 95, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "CALLS", "from_id": "f27b3344b3e7e7c8ee0e00acca8151b7b2bf715c", "to_name": "os.path.dirname", "lineno": 95, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "DEFINES", "from_id": "f27b3344b3e7e7c8ee0e00acca8151b7b2bf715c", "to_id": "734fb15e34780f6884261c0cb8031d00f0813244", "relationship": "defines_variable"}
-{"type": "CALLS", "from_id": "f27b3344b3e7e7c8ee0e00acca8151b7b2bf715c", "to_name": "os.path.join", "lineno": 96, "resolved_name": null, "num_args": 2, "num_kwargs": 0, "inferred": true}
-{"type": "DEFINES", "from_id": "f27b3344b3e7e7c8ee0e00acca8151b7b2bf715c", "to_id": "78fdc26c24c29e3193e60363275db30f6d9bb6b6", "relationship": "defines_variable"}
-{"type": "CALLS", "from_id": "f27b3344b3e7e7c8ee0e00acca8151b7b2bf715c", "to_name": "SelfQueryPipeline", "lineno": 97, "resolved_name": "pipelines.pipeline_self_query.SelfQueryPipeline", "num_args": 0, "num_kwargs": 2, "inferred": true}
-{"type": "CALLS", "from_id": "f27b3344b3e7e7c8ee0e00acca8151b7b2bf715c", "to_name": "mp.main_pipeline", "lineno": 98, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": false, "to_id": "78fdc26c24c29e3193e60363275db30f6d9bb6b6"}
-{"type": "CALLS", "from_id": "f27b3344b3e7e7c8ee0e00acca8151b7b2bf715c", "to_name": "print", "lineno": 100, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "CALLS", "from_id": "f27b3344b3e7e7c8ee0e00acca8151b7b2bf715c", "to_name": "pytest.fail", "lineno": 101, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "68e04f10b4c558f3efe391c194f290214f60c1d5", "to_id": "c5670cc0a0b0b719ae7546ce42188cc2ff760650", "lineno": 1}
+{"type": "DEFINES", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "441764463d2f534e17ea55d2e8109df03eb9c1f2", "relationship": "contains_function"}
+{"type": "DEFINES", "from_id": "441764463d2f534e17ea55d2e8109df03eb9c1f2", "to_id": "2d3f4943e65d49b1484c095249231185e53c744c", "relationship": "defines_variable"}
+{"type": "CALLS", "from_id": "441764463d2f534e17ea55d2e8109df03eb9c1f2", "to_name": "os.path.dirname", "lineno": 86, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
+{"type": "CALLS", "from_id": "441764463d2f534e17ea55d2e8109df03eb9c1f2", "to_name": "os.path.dirname", "lineno": 86, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
+{"type": "DEFINES", "from_id": "441764463d2f534e17ea55d2e8109df03eb9c1f2", "to_id": "ef21bf4ac457d8669251a86262649a713391a20a", "relationship": "defines_variable"}
+{"type": "CALLS", "from_id": "441764463d2f534e17ea55d2e8109df03eb9c1f2", "to_name": "os.path.join", "lineno": 87, "resolved_name": null, "num_args": 2, "num_kwargs": 0, "inferred": true}
+{"type": "DEFINES", "from_id": "441764463d2f534e17ea55d2e8109df03eb9c1f2", "to_id": "10b305a1569ee1cd21e173da0ac8b4a657ebbf2c", "relationship": "defines_variable"}
+{"type": "CALLS", "from_id": "441764463d2f534e17ea55d2e8109df03eb9c1f2", "to_name": "ParentChildPipeline", "lineno": 88, "resolved_name": "pipelines.pipeline_parent_child.ParentChildPipeline", "num_args": 0, "num_kwargs": 2, "inferred": true}
+{"type": "CALLS", "from_id": "441764463d2f534e17ea55d2e8109df03eb9c1f2", "to_name": "mp.main_pipeline", "lineno": 89, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": false, "to_id": "10b305a1569ee1cd21e173da0ac8b4a657ebbf2c"}
+{"type": "CALLS", "from_id": "441764463d2f534e17ea55d2e8109df03eb9c1f2", "to_name": "print", "lineno": 91, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
+{"type": "CALLS", "from_id": "441764463d2f534e17ea55d2e8109df03eb9c1f2", "to_name": "pytest.fail", "lineno": 92, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
+{"type": "DEFINES", "from_id": "0144b6fc07df3ee6ef58544807ca0819fd3ba90f", "to_id": "316d2e34ba1fb53397861e336c78e4314864320f", "relationship": "contains_function"}
+{"type": "DEFINES", "from_id": "316d2e34ba1fb53397861e336c78e4314864320f", "to_id": "8a194c7c2385223d6cb08d5df81a8185addf3761", "relationship": "defines_variable"}
+{"type": "CALLS", "from_id": "316d2e34ba1fb53397861e336c78e4314864320f", "to_name": "os.path.dirname", "lineno": 96, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
+{"type": "CALLS", "from_id": "316d2e34ba1fb53397861e336c78e4314864320f", "to_name": "os.path.dirname", "lineno": 96, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
+{"type": "DEFINES", "from_id": "316d2e34ba1fb53397861e336c78e4314864320f", "to_id": "1cd50bcd835d80d06f8bc059e267ba7f5b2a492c", "relationship": "defines_variable"}
+{"type": "CALLS", "from_id": "316d2e34ba1fb53397861e336c78e4314864320f", "to_name": "os.path.join", "lineno": 97, "resolved_name": null, "num_args": 2, "num_kwargs": 0, "inferred": true}
+{"type": "DEFINES", "from_id": "316d2e34ba1fb53397861e336c78e4314864320f", "to_id": "1653789de32d20e95cb260e0fbbcc6b3babbf31b", "relationship": "defines_variable"}
+{"type": "CALLS", "from_id": "316d2e34ba1fb53397861e336c78e4314864320f", "to_name": "SelfQueryPipeline", "lineno": 98, "resolved_name": "pipelines.pipeline_self_query.SelfQueryPipeline", "num_args": 0, "num_kwargs": 2, "inferred": true}
+{"type": "CALLS", "from_id": "316d2e34ba1fb53397861e336c78e4314864320f", "to_name": "mp.main_pipeline", "lineno": 99, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": false, "to_id": "1653789de32d20e95cb260e0fbbcc6b3babbf31b"}
+{"type": "CALLS", "from_id": "316d2e34ba1fb53397861e336c78e4314864320f", "to_name": "print", "lineno": 101, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
+{"type": "CALLS", "from_id": "316d2e34ba1fb53397861e336c78e4314864320f", "to_name": "pytest.fail", "lineno": 102, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
+{"type": "IMPORTS", "from_id": "68e04f10b4c558f3efe391c194f290214f60c1d5", "to_id": "c5670cc0a0b0b719ae7546ce42188cc2ff760650", "lineno": 1, "scope": "module"}
 {"type": "DEFINES", "from_id": "68e04f10b4c558f3efe391c194f290214f60c1d5", "to_id": "fb2fc855605e4c7d51b31736842b7367e2bbaecd", "relationship": "contains_class"}
 {"type": "DEFINES", "from_id": "fb2fc855605e4c7d51b31736842b7367e2bbaecd", "to_id": "978a86f09c9875add8fe57a4c64c99b5a640c96a", "relationship": "contains_method"}
 {"type": "HAS_PARAMETER", "from_id": "978a86f09c9875add8fe57a4c64c99b5a640c96a", "to_id": "918cdf4244874a14b11cc6a615def725c24c27a3", "position": 0}
@@ -207,13 +206,13 @@
 {"type": "CALLS", "from_id": "70a4abfd67b7478fb50516c209c82a02f5e9561b", "to_name": "PromptTemplate", "lineno": 46, "resolved_name": "langchain_core.prompts.PromptTemplate", "num_args": 1, "num_kwargs": 0, "inferred": true}
 {"type": "RETURNS", "from_id": "70a4abfd67b7478fb50516c209c82a02f5e9561b", "to_name": "template.format(question=question, k=k)", "lineno": 47}
 {"type": "CALLS", "from_id": "70a4abfd67b7478fb50516c209c82a02f5e9561b", "to_name": "template.format", "lineno": 47, "resolved_name": null, "num_args": 0, "num_kwargs": 2, "inferred": false, "to_id": "f42b0e814c823abf2158e3f411a8ef96487d6e0f"}
-{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "67724d4d40e67b7fe1c0125fb56ec5c7b217fccd", "lineno": 1}
-{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "af6cbb1e5a3109baeefb7f90e0b523791e7f0a56", "lineno": 1}
-{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "dc7a68444618bbc5b1107b88071b7aa6c4e25861", "lineno": 1}
-{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "1c468d8c9048b2d66782d7bf0c67b586260db58b", "lineno": 2}
-{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "85c2b13b7cd87fd55325a66c09a2317f127eb4a2", "lineno": 2}
-{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "f29c1e8be25f1127853fb7c02db0a6be84a06e26", "lineno": 2}
-{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "b37387c56c3e5fc80139b682d6611709a955151a", "lineno": 2}
+{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "67724d4d40e67b7fe1c0125fb56ec5c7b217fccd", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "af6cbb1e5a3109baeefb7f90e0b523791e7f0a56", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "dc7a68444618bbc5b1107b88071b7aa6c4e25861", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "1c468d8c9048b2d66782d7bf0c67b586260db58b", "lineno": 2, "scope": "module"}
+{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "85c2b13b7cd87fd55325a66c09a2317f127eb4a2", "lineno": 2, "scope": "module"}
+{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "f29c1e8be25f1127853fb7c02db0a6be84a06e26", "lineno": 2, "scope": "module"}
+{"type": "IMPORTS", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "b37387c56c3e5fc80139b682d6611709a955151a", "lineno": 2, "scope": "module"}
 {"type": "DEFINES", "from_id": "e82bdf4a1db96b37ed8d8f4f9b2825cfcdb56629", "to_id": "e209948fd84e086938f4474f1b0ff7854d7b2c13", "relationship": "contains_class"}
 {"type": "CALLS", "from_id": "e209948fd84e086938f4474f1b0ff7854d7b2c13", "to_name": "field", "lineno": 52, "resolved_name": "dataclasses.field", "num_args": 0, "num_kwargs": 1, "inferred": true}
 {"type": "CALLS", "from_id": "e209948fd84e086938f4474f1b0ff7854d7b2c13", "to_name": "field", "lineno": 53, "resolved_name": "dataclasses.field", "num_args": 0, "num_kwargs": 1, "inferred": true}
@@ -225,8 +224,8 @@
 {"type": "HAS_PARAMETER", "from_id": "e8956ec35d04fcbac7a3fb37a6e391a776c21254", "to_id": "d24e206ce97bf3725370783e468ee888a184b8c2", "position": 0}
 {"type": "RETURNS", "from_id": "e8956ec35d04fcbac7a3fb37a6e391a776c21254", "to_name": "asdict(self)", "lineno": 65}
 {"type": "CALLS", "from_id": "e8956ec35d04fcbac7a3fb37a6e391a776c21254", "to_name": "asdict", "lineno": 65, "resolved_name": "dataclasses.asdict", "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "046b9ec2b3a7686f60612b37d9f3e5ed3a979b3e", "to_id": "059ee7f65c7f9a18fefaf01823d9b36326546f06", "lineno": 1}
-{"type": "IMPORTS", "from_id": "046b9ec2b3a7686f60612b37d9f3e5ed3a979b3e", "to_id": "e471a7ee022e7da0cb96d79bf8aac6a16abdb96e", "lineno": 2}
+{"type": "IMPORTS", "from_id": "046b9ec2b3a7686f60612b37d9f3e5ed3a979b3e", "to_id": "059ee7f65c7f9a18fefaf01823d9b36326546f06", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "046b9ec2b3a7686f60612b37d9f3e5ed3a979b3e", "to_id": "e471a7ee022e7da0cb96d79bf8aac6a16abdb96e", "lineno": 2, "scope": "module"}
 {"type": "DEFINES", "from_id": "046b9ec2b3a7686f60612b37d9f3e5ed3a979b3e", "to_id": "9cedb7eb4226bfad7fcae46fdfc7d74f2bd14e11", "relationship": "contains_function"}
 {"type": "HAS_PARAMETER", "from_id": "9cedb7eb4226bfad7fcae46fdfc7d74f2bd14e11", "to_id": "ac7099b063ab20aa50bf6496c6defed561933d8b", "position": 0}
 {"type": "DEFINES", "from_id": "9cedb7eb4226bfad7fcae46fdfc7d74f2bd14e11", "to_id": "6abafbed48aa703ddce389951826f7e5facc5de4", "relationship": "defines_variable"}
@@ -235,27 +234,27 @@
 {"type": "CALLS", "from_id": "9cedb7eb4226bfad7fcae46fdfc7d74f2bd14e11", "to_name": "os.path.join", "lineno": 13, "resolved_name": null, "num_args": 2, "num_kwargs": 0, "inferred": true}
 {"type": "CALLS", "from_id": "9cedb7eb4226bfad7fcae46fdfc7d74f2bd14e11", "to_name": "paths.append", "lineno": 14, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": false, "to_id": "6abafbed48aa703ddce389951826f7e5facc5de4"}
 {"type": "RETURNS", "from_id": "9cedb7eb4226bfad7fcae46fdfc7d74f2bd14e11", "to_name": "paths", "lineno": 15}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "730dd7526a3efdafc249e847f8f0b1be2195c758", "lineno": 1}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "edf8f6676906e726301fc2da5b2021e6de34ec29", "lineno": 2}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "4afa2c5292ffbaf2cf8b9b5cade79c00d45250d0", "lineno": 3}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "6d3c9871bae6db160ec4357b8d0a1cef06dc9745", "lineno": 4}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "6d87451ad3c2967dbfedd8ef6267bfb9409b96a6", "lineno": 5}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "a871e1c81dc35cc09456c5993734350883f6f5ff", "lineno": 6}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "aab8b98d4c1f8f274707562c32d07b1dd5b1aa65", "lineno": 7}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "1546e07ab2b4de685839c1b0d3b4b625a4ad6f2f", "lineno": 8}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "73a4d2032113882a9346ea10308b5e6829d4c1e5", "lineno": 8}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "4449a7d6d88fe50d75454240e4b0fa56c105966d", "lineno": 8}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "061bae2b9fcb2f74b06ad8774c58ff0c1132006f", "lineno": 8}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "2bce75a4e8d323e1d5cba73927a3bb06fa1beef0", "lineno": 9}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "730dd7526a3efdafc249e847f8f0b1be2195c758", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "edf8f6676906e726301fc2da5b2021e6de34ec29", "lineno": 2, "scope": "module"}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "4afa2c5292ffbaf2cf8b9b5cade79c00d45250d0", "lineno": 3, "scope": "module"}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "6d3c9871bae6db160ec4357b8d0a1cef06dc9745", "lineno": 4, "scope": "module"}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "6d87451ad3c2967dbfedd8ef6267bfb9409b96a6", "lineno": 5, "scope": "module"}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "a871e1c81dc35cc09456c5993734350883f6f5ff", "lineno": 6, "scope": "module"}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "aab8b98d4c1f8f274707562c32d07b1dd5b1aa65", "lineno": 7, "scope": "module"}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "1546e07ab2b4de685839c1b0d3b4b625a4ad6f2f", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "73a4d2032113882a9346ea10308b5e6829d4c1e5", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "4449a7d6d88fe50d75454240e4b0fa56c105966d", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "061bae2b9fcb2f74b06ad8774c58ff0c1132006f", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "2bce75a4e8d323e1d5cba73927a3bb06fa1beef0", "lineno": 9, "scope": "module"}
 {"type": "CALLS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_name": "__import__", "lineno": 13, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "d9532959bdd56bb65b89f26bcc577d8ef0a6577e", "lineno": 14}
+{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "d9532959bdd56bb65b89f26bcc577d8ef0a6577e", "lineno": 14, "scope": "module"}
 {"type": "CALLS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_name": "sys.modules.pop", "lineno": 15, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
 {"type": "CALLS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_name": "load_dotenv", "lineno": 18, "resolved_name": "dotenv.load_dotenv", "num_args": 0, "num_kwargs": 0, "inferred": true}
 {"type": "DEFINES", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "71c6aff74139c55f63a700db2851f6226417b489", "relationship": "contains_class"}
 {"type": "DEFINES", "from_id": "71c6aff74139c55f63a700db2851f6226417b489", "to_id": "9285a8399b907c0bb7ecf65b3d07d1d0ff24c145", "relationship": "contains_method"}
 {"type": "HAS_PARAMETER", "from_id": "9285a8399b907c0bb7ecf65b3d07d1d0ff24c145", "to_id": "b90687b5ec61f35b3856fb02a2f7d6e36e2ff0c1", "position": 0}
 {"type": "CALLS", "from_id": "9285a8399b907c0bb7ecf65b3d07d1d0ff24c145", "to_name": "__import__", "lineno": 47, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "8c9a10cf3a5ad3a64eff056212cee9672dbf1a48", "to_id": "9559bab83ed7feeb53e3c2f42d321cebe73a2082", "lineno": 48}
+{"type": "IMPORTS", "from_id": "9285a8399b907c0bb7ecf65b3d07d1d0ff24c145", "to_id": "9559bab83ed7feeb53e3c2f42d321cebe73a2082", "lineno": 48, "scope": "function"}
 {"type": "CALLS", "from_id": "9285a8399b907c0bb7ecf65b3d07d1d0ff24c145", "to_name": "sys.modules.pop", "lineno": 49, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
 {"type": "DEFINES", "from_id": "9285a8399b907c0bb7ecf65b3d07d1d0ff24c145", "to_id": "bbdfd3815d49caa4e0cecf8a460ff21fe1d9912b", "relationship": "defines_variable"}
 {"type": "CALLS", "from_id": "9285a8399b907c0bb7ecf65b3d07d1d0ff24c145", "to_name": "chromadb.HttpClient", "lineno": 51, "resolved_name": null, "num_args": 0, "num_kwargs": 2, "inferred": true}
@@ -327,23 +326,23 @@
 {"type": "CALLS", "from_id": "e426c027edaa158ed9ccbb9c23b10c436751b2dd", "to_name": "self.chroma_client", "lineno": 160, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": true}
 {"type": "RETURNS", "from_id": "e426c027edaa158ed9ccbb9c23b10c436751b2dd", "to_name": "client.reset()", "lineno": 161}
 {"type": "CALLS", "from_id": "e426c027edaa158ed9ccbb9c23b10c436751b2dd", "to_name": "client.reset", "lineno": 161, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": false, "to_id": "179a60a178b1c949845a9f6890ba234a1cfa330e"}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "5f4834bc88ef7c7936e18e08b44c7db2570709f4", "lineno": 1}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "74bbc372637a356b4bb242b9c6c5fcf45326bfa2", "lineno": 1}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "a3f51fc6944748c3d4d91845d351f8cd65a8e1bc", "lineno": 1}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "cd3595d74ee62ec94141586b775d27cd6fe4d3ca", "lineno": 1}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "230c6ac911812059fb799417edf9564fe53e44a3", "lineno": 1}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "977aed1294d41d02968d6a5c9f253c21308df249", "lineno": 1}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "15e1e0b0d179e70b7b921c9bc406bc09bf51a67e", "lineno": 9}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "d3a8189d1af32e6e6ffb6d747e69a63394f3f81f", "lineno": 10}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "187f26f6db20675419a6a912b4bd89161c3ff562", "lineno": 11}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "2a5624e07353ef28e56414be47b9d04b4f7bfd9a", "lineno": 12}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "73d7873ad1ad611744032e4c137bbd014188cfee", "lineno": 13}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "24f86490984b6798d004ba25c24344b01f45ff70", "lineno": 14}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "9d8fb9d3092d70b4ec68c7cf61b1e91dc111941a", "lineno": 14}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "e7d64f82bdc684afecb192c69d332d48a14cc289", "lineno": 15}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "05654ad6b8e40145025ace9c9cb0e56cfa0717d5", "lineno": 16}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "61e9371d1047e0a19fac984f547ba7796c35e12f", "lineno": 17}
-{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "a32521277b9d630ba93c040a9ad350cd2b750c4e", "lineno": 18}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "5f4834bc88ef7c7936e18e08b44c7db2570709f4", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "74bbc372637a356b4bb242b9c6c5fcf45326bfa2", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "a3f51fc6944748c3d4d91845d351f8cd65a8e1bc", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "cd3595d74ee62ec94141586b775d27cd6fe4d3ca", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "230c6ac911812059fb799417edf9564fe53e44a3", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "977aed1294d41d02968d6a5c9f253c21308df249", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "15e1e0b0d179e70b7b921c9bc406bc09bf51a67e", "lineno": 9, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "d3a8189d1af32e6e6ffb6d747e69a63394f3f81f", "lineno": 10, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "187f26f6db20675419a6a912b4bd89161c3ff562", "lineno": 11, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "2a5624e07353ef28e56414be47b9d04b4f7bfd9a", "lineno": 12, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "73d7873ad1ad611744032e4c137bbd014188cfee", "lineno": 13, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "24f86490984b6798d004ba25c24344b01f45ff70", "lineno": 14, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "9d8fb9d3092d70b4ec68c7cf61b1e91dc111941a", "lineno": 14, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "e7d64f82bdc684afecb192c69d332d48a14cc289", "lineno": 15, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "05654ad6b8e40145025ace9c9cb0e56cfa0717d5", "lineno": 16, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "61e9371d1047e0a19fac984f547ba7796c35e12f", "lineno": 17, "scope": "module"}
+{"type": "IMPORTS", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "a32521277b9d630ba93c040a9ad350cd2b750c4e", "lineno": 18, "scope": "module"}
 {"type": "DEFINES", "from_id": "4747f6b3cce2c4bf3c95eb46c17c2602d3b6a5ee", "to_id": "5b15e9e88e4242ad31dc6bb5fe579d19d40b95dd", "relationship": "contains_class"}
 {"type": "DEFINES", "from_id": "5b15e9e88e4242ad31dc6bb5fe579d19d40b95dd", "to_id": "46ad3fb47cc1e5da9ddc6aa8ad27131fa15c33f3", "relationship": "contains_method"}
 {"type": "HAS_PARAMETER", "from_id": "46ad3fb47cc1e5da9ddc6aa8ad27131fa15c33f3", "to_id": "fd4f06006e7fff84cce791569e9a65045d073421", "position": 0}
@@ -376,12 +375,12 @@
 {"type": "CALLS", "from_id": "e71faae9af90f610485f5e0e4c86b51954a77549", "to_name": "OpenAIModerationChain", "lineno": 94, "resolved_name": "langchain.chains.OpenAIModerationChain", "num_args": 0, "num_kwargs": 1, "inferred": true}
 {"type": "RETURNS", "from_id": "e71faae9af90f610485f5e0e4c86b51954a77549", "to_name": "SequentialChain(chains=[main_chain, moderation_chain], input_variables=input_variables)", "lineno": 96}
 {"type": "CALLS", "from_id": "e71faae9af90f610485f5e0e4c86b51954a77549", "to_name": "SequentialChain", "lineno": 96, "resolved_name": "langchain.chains.SequentialChain", "num_args": 0, "num_kwargs": 2, "inferred": true}
-{"type": "IMPORTS", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "87e539f2f162324d74168ad23df565fc598c489f", "lineno": 5}
-{"type": "IMPORTS", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "0188a120b73734d3644beb3425dcca872da5fec6", "lineno": 6}
-{"type": "IMPORTS", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "0715c923fcdb04038198ee91ce928fa5d3576a19", "lineno": 7}
-{"type": "IMPORTS", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "fdfd171418e39501be95889cc0ff976be2b21457", "lineno": 8}
-{"type": "IMPORTS", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "08565707905a8a3b1c8afd717ad0fa745d4f9e5f", "lineno": 9}
-{"type": "IMPORTS", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "a5bcb0ba54a2acf7377cdbd485c54113b1b60fa8", "lineno": 10}
+{"type": "IMPORTS", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "87e539f2f162324d74168ad23df565fc598c489f", "lineno": 5, "scope": "module"}
+{"type": "IMPORTS", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "0188a120b73734d3644beb3425dcca872da5fec6", "lineno": 6, "scope": "module"}
+{"type": "IMPORTS", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "0715c923fcdb04038198ee91ce928fa5d3576a19", "lineno": 7, "scope": "module"}
+{"type": "IMPORTS", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "fdfd171418e39501be95889cc0ff976be2b21457", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "08565707905a8a3b1c8afd717ad0fa745d4f9e5f", "lineno": 9, "scope": "module"}
+{"type": "IMPORTS", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "a5bcb0ba54a2acf7377cdbd485c54113b1b60fa8", "lineno": 10, "scope": "module"}
 {"type": "DEFINES", "from_id": "93d9cba7eb911e7960f3057467ce1d9080995c5f", "to_id": "2e2f67842fbc3c621cdf00cf053b521b5573d95a", "relationship": "contains_class"}
 {"type": "DEFINES", "from_id": "2e2f67842fbc3c621cdf00cf053b521b5573d95a", "to_id": "7e1646528b7aa7205a583898232398473eb4a1bc", "relationship": "contains_method"}
 {"type": "HAS_PARAMETER", "from_id": "7e1646528b7aa7205a583898232398473eb4a1bc", "to_id": "4c902834a8723d8fcc03e37ffc6afa29e4cea38c", "position": 0}
@@ -502,20 +501,20 @@
 {"type": "CALLS", "from_id": "084836cc77d560e84cf9407b00d2bc20fa262f68", "to_name": "conn.close", "lineno": 229, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": false, "to_id": "72840229e3d40654795c44381a4460108960381d"}
 {"type": "RAISES", "from_id": "084836cc77d560e84cf9407b00d2bc20fa262f68", "to_name": "Exception('File with this name is not found in the database.')", "lineno": 232}
 {"type": "CALLS", "from_id": "084836cc77d560e84cf9407b00d2bc20fa262f68", "to_name": "Exception", "lineno": 232, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "e5b8d016244639a02f52934f6c8e5bb492ebcfde", "lineno": 2}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "675c1684d228c48c80c1db805f13fbbede84cc53", "lineno": 3}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "0bc837eb4b2faec83697e0e4c74d17ed2620998d", "lineno": 4}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "cd4940d43a66a3733c0e822603f1132be32113e5", "lineno": 5}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "90e6c484f2f55212596e696de492943251860d37", "lineno": 6}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "a306ce4dd2dced11094fabe462f2f920c384ecfc", "lineno": 7}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "12aba59512d110bab501e7e0f3726fc76de4178a", "lineno": 8}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "bf4c95083226682726901e5d6b0d3497e355a53a", "lineno": 9}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "63d476b54a330e2d352375cead9b382fee175c85", "lineno": 10}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "4b5103278be18696a076b44b14f7c4164371909e", "lineno": 11}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "c559a6299ff66eb379c8a4977c34233e12f30602", "lineno": 12}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "a2e96113a34bc464e8d9c008a657f5eba28eeecc", "lineno": 12}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "7342def290c72513f8e9a855f3b72181562ba942", "lineno": 12}
-{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "6b0d3af1f0c3730d44993126f3a9bbcc8a82df00", "lineno": 13}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "e5b8d016244639a02f52934f6c8e5bb492ebcfde", "lineno": 2, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "675c1684d228c48c80c1db805f13fbbede84cc53", "lineno": 3, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "0bc837eb4b2faec83697e0e4c74d17ed2620998d", "lineno": 4, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "cd4940d43a66a3733c0e822603f1132be32113e5", "lineno": 5, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "90e6c484f2f55212596e696de492943251860d37", "lineno": 6, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "a306ce4dd2dced11094fabe462f2f920c384ecfc", "lineno": 7, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "12aba59512d110bab501e7e0f3726fc76de4178a", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "bf4c95083226682726901e5d6b0d3497e355a53a", "lineno": 9, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "63d476b54a330e2d352375cead9b382fee175c85", "lineno": 10, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "4b5103278be18696a076b44b14f7c4164371909e", "lineno": 11, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "c559a6299ff66eb379c8a4977c34233e12f30602", "lineno": 12, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "a2e96113a34bc464e8d9c008a657f5eba28eeecc", "lineno": 12, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "7342def290c72513f8e9a855f3b72181562ba942", "lineno": 12, "scope": "module"}
+{"type": "IMPORTS", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "6b0d3af1f0c3730d44993126f3a9bbcc8a82df00", "lineno": 13, "scope": "module"}
 {"type": "DEFINES", "from_id": "f5ec50cf5c50ad284697670e12553f3e81bc4ccc", "to_id": "90e82c082901c8f16e753657d9598dc1e8545c38", "relationship": "contains_class"}
 {"type": "DEFINES", "from_id": "90e82c082901c8f16e753657d9598dc1e8545c38", "to_id": "4a2ce783a436822b971ae4dbc57b3ee61b4c0b10", "relationship": "contains_method"}
 {"type": "HAS_PARAMETER", "from_id": "4a2ce783a436822b971ae4dbc57b3ee61b4c0b10", "to_id": "7acf544955e9ebe1686a443f730e19af30378ac0", "position": 0}
@@ -566,19 +565,19 @@
 {"type": "DEFINES", "from_id": "710098753184543213daf316b15e12c00906a37e", "to_id": "cab67214cc6aa720b27ac21bdce51c1c34ad3667", "relationship": "defines_variable"}
 {"type": "RETURNS", "from_id": "710098753184543213daf316b15e12c00906a37e", "to_name": "ParentDocumentRetriever(vectorstore=vectorstore, docstore=store, child_splitter=child_splitter, parent_splitter=parent_splitter, child_metadata_fields=child_metadata_fields)", "lineno": 135}
 {"type": "CALLS", "from_id": "710098753184543213daf316b15e12c00906a37e", "to_name": "ParentDocumentRetriever", "lineno": 135, "resolved_name": "langchain.retrievers.ParentDocumentRetriever", "num_args": 0, "num_kwargs": 5, "inferred": true}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "7c067b0c8b4dea325a936d83a848a130ae157666", "lineno": 2}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "efca1651e25cfe939228f92a503ed91dc20691cf", "lineno": 3}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "3651b1c1b0922f49a702deee17ec7d3283debbdb", "lineno": 4}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "926c2c199b28f95e1d09c8cbd7254fbc0b212d31", "lineno": 5}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "2965e9837cf664b7a6b236e60fe38ef44e7bb6c0", "lineno": 6}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "24d4aa71ac07c54b0de348e0f677615caf0ee9db", "lineno": 7}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "6812ffb05c5cfc3744ac98f2a1475309086d8b89", "lineno": 7}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "60972ec1fe739b032ac013c7ed4c59e4e092f988", "lineno": 8}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "f591cd97249ee8820ae004a542176ba6cbf4e3d1", "lineno": 9}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "636d7b541d2baa25dcf9710d3aa539008dc6ddef", "lineno": 10}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "59e4e6a6eb9b8259c8a5254276b8dc0a3d442fc6", "lineno": 11}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "236957639d161f1c29c9f2ba924295a1e60cece9", "lineno": 11}
-{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "dd9faa9e1702b494592164a94d3325e769c286d9", "lineno": 11}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "7c067b0c8b4dea325a936d83a848a130ae157666", "lineno": 2, "scope": "module"}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "efca1651e25cfe939228f92a503ed91dc20691cf", "lineno": 3, "scope": "module"}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "3651b1c1b0922f49a702deee17ec7d3283debbdb", "lineno": 4, "scope": "module"}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "926c2c199b28f95e1d09c8cbd7254fbc0b212d31", "lineno": 5, "scope": "module"}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "2965e9837cf664b7a6b236e60fe38ef44e7bb6c0", "lineno": 6, "scope": "module"}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "24d4aa71ac07c54b0de348e0f677615caf0ee9db", "lineno": 7, "scope": "module"}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "6812ffb05c5cfc3744ac98f2a1475309086d8b89", "lineno": 7, "scope": "module"}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "60972ec1fe739b032ac013c7ed4c59e4e092f988", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "f591cd97249ee8820ae004a542176ba6cbf4e3d1", "lineno": 9, "scope": "module"}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "636d7b541d2baa25dcf9710d3aa539008dc6ddef", "lineno": 10, "scope": "module"}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "59e4e6a6eb9b8259c8a5254276b8dc0a3d442fc6", "lineno": 11, "scope": "module"}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "236957639d161f1c29c9f2ba924295a1e60cece9", "lineno": 11, "scope": "module"}
+{"type": "IMPORTS", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "dd9faa9e1702b494592164a94d3325e769c286d9", "lineno": 11, "scope": "module"}
 {"type": "DEFINES", "from_id": "7b855fb47f4976ff2acc5370725aa74debd0e109", "to_id": "1e66643e5028455a6e8237d6109479a77f07b244", "relationship": "contains_class"}
 {"type": "DEFINES", "from_id": "1e66643e5028455a6e8237d6109479a77f07b244", "to_id": "b350b2f8019392092c81ca612b57e5380eda7a3a", "relationship": "contains_method"}
 {"type": "DECORATES", "from_id": "21f78fc52de0267397d37deca3eb6e03e635773c", "to_id": "b350b2f8019392092c81ca612b57e5380eda7a3a", "lineno": 25}
@@ -614,12 +613,12 @@
 {"type": "RETURNS", "from_id": "90eaec448e4da44d7eba67e5a519ab3770d6b2d2", "to_name": "ConversationSummaryBufferMemory(llm=hf, memory_key='chat_history', chat_memory=chat_memory, return_messages=True, output_key='answer')", "lineno": 103}
 {"type": "CALLS", "from_id": "90eaec448e4da44d7eba67e5a519ab3770d6b2d2", "to_name": "ConversationSummaryBufferMemory", "lineno": 103, "resolved_name": "langchain.memory.ConversationSummaryBufferMemory", "num_args": 0, "num_kwargs": 5, "inferred": true}
 {"type": "CALLS", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_name": "__import__", "lineno": 3, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_id": "58e74f3f023c4419a1766e86ba55480e5f781351", "lineno": 4}
+{"type": "IMPORTS", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_id": "58e74f3f023c4419a1766e86ba55480e5f781351", "lineno": 4, "scope": "module"}
 {"type": "CALLS", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_name": "sys.modules.pop", "lineno": 5, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_id": "33df08bdeaae1f5b133e0eb4ec61572a81a7bdf7", "lineno": 7}
-{"type": "IMPORTS", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_id": "9520d443218a86b01a3ecddc2d69793e0568a167", "lineno": 7}
-{"type": "IMPORTS", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_id": "7e6dc44fb95bf88c17cc370df039c16600e99511", "lineno": 8}
-{"type": "IMPORTS", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_id": "6fccc710f45a3f7a5ae33c034576c3bd35dba195", "lineno": 9}
+{"type": "IMPORTS", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_id": "33df08bdeaae1f5b133e0eb4ec61572a81a7bdf7", "lineno": 7, "scope": "module"}
+{"type": "IMPORTS", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_id": "9520d443218a86b01a3ecddc2d69793e0568a167", "lineno": 7, "scope": "module"}
+{"type": "IMPORTS", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_id": "7e6dc44fb95bf88c17cc370df039c16600e99511", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_id": "6fccc710f45a3f7a5ae33c034576c3bd35dba195", "lineno": 9, "scope": "module"}
 {"type": "DEFINES", "from_id": "6a0be1e5ad772e6037ce3e981c372ad4069ccf94", "to_id": "ba7774935d5f838fbdc9f6b236f2ecb1a55f3777", "relationship": "contains_class"}
 {"type": "DEFINES", "from_id": "ba7774935d5f838fbdc9f6b236f2ecb1a55f3777", "to_id": "bfbe2997c779ffcfc68d3d3b8d8d6be2247f151e", "relationship": "contains_method"}
 {"type": "HAS_PARAMETER", "from_id": "bfbe2997c779ffcfc68d3d3b8d8d6be2247f151e", "to_id": "76ab847f1b4d69ef049228eda4432aeb4bb6a6a1", "position": 0}
@@ -639,13 +638,13 @@
 {"type": "CALLS", "from_id": "d16b80d7628453332c5b2eb8644446e7c69394a8", "to_name": "RecursiveCharacterTextSplitter.from_tiktoken_encoder", "lineno": 60, "resolved_name": "langchain.text_splitter.RecursiveCharacterTextSplitter.from_tiktoken_encoder", "num_args": 0, "num_kwargs": 4, "inferred": true}
 {"type": "RETURNS", "from_id": "d16b80d7628453332c5b2eb8644446e7c69394a8", "to_name": "text_splitter.split_text(text=text)", "lineno": 67}
 {"type": "CALLS", "from_id": "d16b80d7628453332c5b2eb8644446e7c69394a8", "to_name": "text_splitter.split_text", "lineno": 67, "resolved_name": null, "num_args": 0, "num_kwargs": 1, "inferred": false, "to_id": "dcbb5287a030124896371f75b7b350486832fddc"}
-{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "61c20d480b2594c5644070d070859dadd7ea0b45", "lineno": 1}
-{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "6eda25b08e75dc541c555d6edb40392010f4b337", "lineno": 1}
-{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "b1445ef409e95edb7395a629abbe7eac791554da", "lineno": 2}
-{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "ea3326fdfd392f83821c1b03fa265613008c8ae3", "lineno": 3}
-{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "e3d545ab8116a4b32cc95dc1268611008611c0e9", "lineno": 4}
-{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "1e10ac30ecca1dbd383cae0c42a79326ffb28811", "lineno": 5}
-{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "48d4ea6524ead961dc217bdf94c4c832eb1d0292", "lineno": 7}
+{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "61c20d480b2594c5644070d070859dadd7ea0b45", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "6eda25b08e75dc541c555d6edb40392010f4b337", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "b1445ef409e95edb7395a629abbe7eac791554da", "lineno": 2, "scope": "module"}
+{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "ea3326fdfd392f83821c1b03fa265613008c8ae3", "lineno": 3, "scope": "module"}
+{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "e3d545ab8116a4b32cc95dc1268611008611c0e9", "lineno": 4, "scope": "module"}
+{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "1e10ac30ecca1dbd383cae0c42a79326ffb28811", "lineno": 5, "scope": "module"}
+{"type": "IMPORTS", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "48d4ea6524ead961dc217bdf94c4c832eb1d0292", "lineno": 7, "scope": "module"}
 {"type": "DEFINES", "from_id": "572b2e357cdc779d42efde4b17052ac7ebf59dff", "to_id": "d808b6892738636cc1a2d7c5ee7ac7ae2d997471", "relationship": "contains_class"}
 {"type": "DEFINES", "from_id": "d808b6892738636cc1a2d7c5ee7ac7ae2d997471", "to_id": "d4fe3ab754baec7576d104a42423ab07829ccbe4", "relationship": "contains_method"}
 {"type": "HAS_PARAMETER", "from_id": "d4fe3ab754baec7576d104a42423ab07829ccbe4", "to_id": "0670126bd9e8260b84018d839aa50ed242d1d2b2", "position": 0}
@@ -664,9 +663,9 @@
 {"type": "CALLS", "from_id": "d4fe3ab754baec7576d104a42423ab07829ccbe4", "to_name": "loader.load", "lineno": 35, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": false, "to_id": "62fd0b8c0007e6357d5d9a73b4476bb4931b171e"}
 {"type": "CALLS", "from_id": "d4fe3ab754baec7576d104a42423ab07829ccbe4", "to_name": "print", "lineno": 38, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
 {"type": "RETURNS", "from_id": "d4fe3ab754baec7576d104a42423ab07829ccbe4", "to_name": "[]", "lineno": 39}
-{"type": "IMPORTS", "from_id": "e4323ccb4ab8715f3ce552b84b814a626d149a60", "to_id": "96ec6ef99db6c39d090969e4099eab4345e5e843", "lineno": 1}
-{"type": "IMPORTS", "from_id": "45f11dc53187098e90da2cc63635c540110e7632", "to_id": "1df90af9a3f190dc67a8d903174839177974a86d", "lineno": 1}
-{"type": "IMPORTS", "from_id": "45f11dc53187098e90da2cc63635c540110e7632", "to_id": "d819d29143a4a77933f65e20a66a20e8e7f5b613", "lineno": 2}
+{"type": "IMPORTS", "from_id": "e4323ccb4ab8715f3ce552b84b814a626d149a60", "to_id": "96ec6ef99db6c39d090969e4099eab4345e5e843", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "45f11dc53187098e90da2cc63635c540110e7632", "to_id": "1df90af9a3f190dc67a8d903174839177974a86d", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "45f11dc53187098e90da2cc63635c540110e7632", "to_id": "d819d29143a4a77933f65e20a66a20e8e7f5b613", "lineno": 2, "scope": "module"}
 {"type": "DEFINES", "from_id": "45f11dc53187098e90da2cc63635c540110e7632", "to_id": "45cfa57b80f919707364fae1eab5cf26c7addcf8", "relationship": "contains_class"}
 {"type": "DEFINES", "from_id": "45cfa57b80f919707364fae1eab5cf26c7addcf8", "to_id": "8c25cdd15569b8a419ba7ccbe0e7bdef1b78da60", "relationship": "defines_variable"}
 {"type": "DEFINES", "from_id": "45cfa57b80f919707364fae1eab5cf26c7addcf8", "to_id": "dccc0784b61dd3f2c1b96c18e878749128fce134", "relationship": "contains_method"}
@@ -691,15 +690,15 @@
 {"type": "DEFINES", "from_id": "45f11dc53187098e90da2cc63635c540110e7632", "to_id": "bf74992336bb22a734b23a51d2ab70eed5801959", "relationship": "defines_variable"}
 {"type": "CALLS", "from_id": "45f11dc53187098e90da2cc63635c540110e7632", "to_name": "__langfuse_singleton.get_handler", "lineno": 41, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": false, "to_id": "8f163ff8f87bbd074d4c3e5df1e91b6dde0a596f"}
 {"type": "CALLS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_name": "__import__", "lineno": 1, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "49fb82bdbf35da193204f3b3ec22e3f390b02d56", "lineno": 2}
+{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "49fb82bdbf35da193204f3b3ec22e3f390b02d56", "lineno": 2, "scope": "module"}
 {"type": "CALLS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_name": "sys.modules.pop", "lineno": 3, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "c7599be50dca60522d80e3ab0e83fba9e6fba027", "lineno": 5}
-{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "7206af6cb28cf161bdf51031834519109b8fae29", "lineno": 6}
-{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "f1e0944d9b832c944bb8855795fb2d57eb2bd7fd", "lineno": 7}
-{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "42009a08e60abf6d208157473c47d2aa566712c6", "lineno": 8}
-{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "18e4b16375f6acfa117af12eada32729d13b4201", "lineno": 9}
-{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "6e4dec353f6f27fd52a33c67f98c6230cc79a5f2", "lineno": 10}
-{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "02f05624c1badecc3c48e68f4e91c425f5ebd5d7", "lineno": 11}
+{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "c7599be50dca60522d80e3ab0e83fba9e6fba027", "lineno": 5, "scope": "module"}
+{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "7206af6cb28cf161bdf51031834519109b8fae29", "lineno": 6, "scope": "module"}
+{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "f1e0944d9b832c944bb8855795fb2d57eb2bd7fd", "lineno": 7, "scope": "module"}
+{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "42009a08e60abf6d208157473c47d2aa566712c6", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "18e4b16375f6acfa117af12eada32729d13b4201", "lineno": 9, "scope": "module"}
+{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "6e4dec353f6f27fd52a33c67f98c6230cc79a5f2", "lineno": 10, "scope": "module"}
+{"type": "IMPORTS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "02f05624c1badecc3c48e68f4e91c425f5ebd5d7", "lineno": 11, "scope": "module"}
 {"type": "CALLS", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_name": "load_dotenv", "lineno": 14, "resolved_name": "dotenv.load_dotenv", "num_args": 0, "num_kwargs": 0, "inferred": true}
 {"type": "DEFINES", "from_id": "1fda217c2c98260487f2d78f4f46d62fd9cad512", "to_id": "51f1dfaaceac05f6e6f1bff4c99a5c058f125ac8", "relationship": "contains_class"}
 {"type": "DEFINES", "from_id": "51f1dfaaceac05f6e6f1bff4c99a5c058f125ac8", "to_id": "6b0c79516d0425195ecd8491b3251844f1159fa0", "relationship": "contains_method"}
@@ -739,9 +738,9 @@
 {"type": "CALLS", "from_id": "1aa45a8564ab591f0ce49c9b326ad85b21fa7cc7", "to_name": "print", "lineno": 97, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
 {"type": "CALLS", "from_id": "1aa45a8564ab591f0ce49c9b326ad85b21fa7cc7", "to_name": "print", "lineno": 100, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
 {"type": "DEFINES", "from_id": "88cbd6fbd0c24e7b33030513f3c94d168a2cae9b", "to_id": "9b3a746c5ae6093de7ea2614ce8a763ae059c8ad", "relationship": "contains_class"}
-{"type": "IMPORTS", "from_id": "b734f2a0a5fceca518952c966f25b77b1fd79f42", "to_id": "c0a6be135f4666990e644e00cf6ec41883b1ebd8", "lineno": 1}
-{"type": "IMPORTS", "from_id": "b734f2a0a5fceca518952c966f25b77b1fd79f42", "to_id": "d08d80f1fc48d6727fd7d7a3f19dee3c0e2be98f", "lineno": 2}
-{"type": "IMPORTS", "from_id": "b734f2a0a5fceca518952c966f25b77b1fd79f42", "to_id": "a489a7112c0ae9d1d0b44ac62c141b74b8f123c3", "lineno": 3}
+{"type": "IMPORTS", "from_id": "b734f2a0a5fceca518952c966f25b77b1fd79f42", "to_id": "c0a6be135f4666990e644e00cf6ec41883b1ebd8", "lineno": 1, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b734f2a0a5fceca518952c966f25b77b1fd79f42", "to_id": "d08d80f1fc48d6727fd7d7a3f19dee3c0e2be98f", "lineno": 2, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b734f2a0a5fceca518952c966f25b77b1fd79f42", "to_id": "a489a7112c0ae9d1d0b44ac62c141b74b8f123c3", "lineno": 3, "scope": "module"}
 {"type": "DEFINES", "from_id": "b734f2a0a5fceca518952c966f25b77b1fd79f42", "to_id": "d89f935a704dfa1cdfe01013a64533439ede562c", "relationship": "defines_variable"}
 {"type": "CALLS", "from_id": "b734f2a0a5fceca518952c966f25b77b1fd79f42", "to_name": "Route", "lineno": 22, "resolved_name": "semantic_router.Route", "num_args": 0, "num_kwargs": 2, "inferred": true}
 {"type": "DEFINES", "from_id": "b734f2a0a5fceca518952c966f25b77b1fd79f42", "to_id": "a3cac941b27f213802ef5b1c1b3e49d6b5b5d2ac", "relationship": "defines_variable"}
@@ -764,28 +763,28 @@
 {"type": "DEFINES", "from_id": "b734f2a0a5fceca518952c966f25b77b1fd79f42", "to_id": "efea36fa1fc242ee3c3b77a72c474f867c06e271", "relationship": "defines_variable"}
 {"type": "CALLS", "from_id": "b734f2a0a5fceca518952c966f25b77b1fd79f42", "to_name": "RouteLayer", "lineno": 520, "resolved_name": "semantic_router.layer.RouteLayer", "num_args": 0, "num_kwargs": 2, "inferred": true}
 {"type": "CALLS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_name": "__import__", "lineno": 3, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "2f71fab6f48163888f3ed537ab10bef55b8c6488", "lineno": 4}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "2f71fab6f48163888f3ed537ab10bef55b8c6488", "lineno": 4, "scope": "module"}
 {"type": "CALLS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_name": "sys.modules.pop", "lineno": 5, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
 {"type": "CALLS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_name": "sys.path.append", "lineno": 6, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "8df5901c38815e652da6ac320cf4792eca769930", "lineno": 7}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "2c4b97d5b2e16807f844c05d6fd8d680566006b0", "lineno": 8}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "db0cce460d40b2f59a41dc475c06cf8ab32e2a3c", "lineno": 9}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "a7a8eb1a41f2171a2343bdba458d890b85f8d578", "lineno": 10}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "769b4f05c2f0920ae9f575bfe68356a08b134597", "lineno": 11}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "e8a3f653e557ab80c7f310f373af44b5e3d55130", "lineno": 12}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "1d8a6a24272e4208e090f0c7605f029f6a29cf57", "lineno": 14}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "aa4552a354c13dde3a420a648215cb909df73adc", "lineno": 16}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "55f40b059c4a4ac54f2909d9d565921914402094", "lineno": 17}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "9307b89a210fc45923c1d36d80d29a274d23fe04", "lineno": 18}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "92949ac6259dfe66a2852b4ef0ac04f0fa27af06", "lineno": 19}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "5239eaed5280e0752690bba925f05e238742d958", "lineno": 20}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "cf4ccb0bf47fe72fb29eab1f8c7e6ca1c9762b3e", "lineno": 22}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "a72d4a32a75ec0d607664a25e2c04aec4b0af25b", "lineno": 24}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "a072f92653e78a3983494f166aafa69909321e05", "lineno": 25}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "f5a88a17aadcbb02d3f7937ab44721bda6480e42", "lineno": 25}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "ee30942cdb0c711422d9e5e75a7adf7c6da143a6", "lineno": 25}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "b5eba410637c384262de2951338ce74f5291c21f", "lineno": 25}
-{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "3787d45263a5e91264d24cc31ca962fa3dab96f0", "lineno": 25}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "8df5901c38815e652da6ac320cf4792eca769930", "lineno": 7, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "2c4b97d5b2e16807f844c05d6fd8d680566006b0", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "db0cce460d40b2f59a41dc475c06cf8ab32e2a3c", "lineno": 9, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "a7a8eb1a41f2171a2343bdba458d890b85f8d578", "lineno": 10, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "769b4f05c2f0920ae9f575bfe68356a08b134597", "lineno": 11, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "e8a3f653e557ab80c7f310f373af44b5e3d55130", "lineno": 12, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "1d8a6a24272e4208e090f0c7605f029f6a29cf57", "lineno": 14, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "aa4552a354c13dde3a420a648215cb909df73adc", "lineno": 16, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "55f40b059c4a4ac54f2909d9d565921914402094", "lineno": 17, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "9307b89a210fc45923c1d36d80d29a274d23fe04", "lineno": 18, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "92949ac6259dfe66a2852b4ef0ac04f0fa27af06", "lineno": 19, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "5239eaed5280e0752690bba925f05e238742d958", "lineno": 20, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "cf4ccb0bf47fe72fb29eab1f8c7e6ca1c9762b3e", "lineno": 22, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "a72d4a32a75ec0d607664a25e2c04aec4b0af25b", "lineno": 24, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "a072f92653e78a3983494f166aafa69909321e05", "lineno": 25, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "f5a88a17aadcbb02d3f7937ab44721bda6480e42", "lineno": 25, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "ee30942cdb0c711422d9e5e75a7adf7c6da143a6", "lineno": 25, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "b5eba410637c384262de2951338ce74f5291c21f", "lineno": 25, "scope": "module"}
+{"type": "IMPORTS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "3787d45263a5e91264d24cc31ca962fa3dab96f0", "lineno": 25, "scope": "module"}
 {"type": "CALLS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_name": "load_dotenv", "lineno": 27, "resolved_name": "dotenv.load_dotenv", "num_args": 0, "num_kwargs": 0, "inferred": true}
 {"type": "DEFINES", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_id": "f9b04f9e861052c96a01288abbb9cdb03df9e384", "relationship": "defines_variable"}
 {"type": "CALLS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_name": "AttributeInfo", "lineno": 30, "resolved_name": "langchain.chains.query_constructor.schema.AttributeInfo", "num_args": 0, "num_kwargs": 3, "inferred": true}
@@ -884,21 +883,21 @@
 {"type": "CALLS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_name": "MainPipeline", "lineno": 268, "resolved_name": null, "num_args": 0, "num_kwargs": 1, "inferred": false, "to_id": "5d59056434c6754dbd859c9ebb57c44dc898978f"}
 {"type": "CALLS", "from_id": "a14383f81272934a071b76ff2c93ee8365a2d40c", "to_name": "mp.main_pipeline", "lineno": 269, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": false, "to_id": "958669c14093e3c54e4800ca8fcc177942ce8bf0"}
 {"type": "CALLS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_name": "__import__", "lineno": 3, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "bfe7ff9ed710817d92d927841d40ee32c366432e", "lineno": 4}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "bfe7ff9ed710817d92d927841d40ee32c366432e", "lineno": 4, "scope": "module"}
 {"type": "CALLS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_name": "sys.modules.pop", "lineno": 5, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
 {"type": "CALLS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_name": "sys.path.append", "lineno": 7, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "5c96466b82b7c8d3989380b77933c80c0f849d48", "lineno": 8}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "127a3ecaca20fe005023e93e3316c1d4585ff2a4", "lineno": 9}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "9cd5aea213646a37054a2cf09b37b07c7b2a5c92", "lineno": 10}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "66a82df562f03f9c1a9a60788f74b3d8d216f652", "lineno": 12}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "8fca4deb5b515833642b1988360ea28b2944ac20", "lineno": 14}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "d9574af1903eebb0311e2e8cb43c76f60bcb259a", "lineno": 15}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "e44695e6ff3c99c8bf7335ae10e9f54ea1fb4b18", "lineno": 16}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "8e2b7e60430505fbcc867649db37c3d6d3ec4c5b", "lineno": 17}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "6c89eda84a22b77fedfebbbc628e44682f0d138d", "lineno": 19}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "26ecd3bab3b610d6f63605cc34c39d85b71297a1", "lineno": 21}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "1bc05a9307a73d803c3b24f124e858eae4591bb5", "lineno": 22}
-{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "e007c21ef6015867847f810317ca598cc95ec7d7", "lineno": 22}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "5c96466b82b7c8d3989380b77933c80c0f849d48", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "127a3ecaca20fe005023e93e3316c1d4585ff2a4", "lineno": 9, "scope": "module"}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "9cd5aea213646a37054a2cf09b37b07c7b2a5c92", "lineno": 10, "scope": "module"}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "66a82df562f03f9c1a9a60788f74b3d8d216f652", "lineno": 12, "scope": "module"}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "8fca4deb5b515833642b1988360ea28b2944ac20", "lineno": 14, "scope": "module"}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "d9574af1903eebb0311e2e8cb43c76f60bcb259a", "lineno": 15, "scope": "module"}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "e44695e6ff3c99c8bf7335ae10e9f54ea1fb4b18", "lineno": 16, "scope": "module"}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "8e2b7e60430505fbcc867649db37c3d6d3ec4c5b", "lineno": 17, "scope": "module"}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "6c89eda84a22b77fedfebbbc628e44682f0d138d", "lineno": 19, "scope": "module"}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "26ecd3bab3b610d6f63605cc34c39d85b71297a1", "lineno": 21, "scope": "module"}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "1bc05a9307a73d803c3b24f124e858eae4591bb5", "lineno": 22, "scope": "module"}
+{"type": "IMPORTS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "e007c21ef6015867847f810317ca598cc95ec7d7", "lineno": 22, "scope": "module"}
 {"type": "CALLS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_name": "load_dotenv", "lineno": 25, "resolved_name": "dotenv.load_dotenv", "num_args": 0, "num_kwargs": 0, "inferred": true}
 {"type": "DEFINES", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_id": "2a716d65517298b015a1e56ae96ee43b3eb7266e", "relationship": "contains_class"}
 {"type": "INHERITS", "from_id": "2a716d65517298b015a1e56ae96ee43b3eb7266e", "to_name": "BasePipeline", "inferred": true}
@@ -964,39 +963,39 @@
 {"type": "CALLS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_name": "ParentChildPipeline", "lineno": 108, "resolved_name": null, "num_args": 0, "num_kwargs": 1, "inferred": false, "to_id": "2a716d65517298b015a1e56ae96ee43b3eb7266e"}
 {"type": "CALLS", "from_id": "fde318f497d19cdd763eeeb36d47a161b89882a3", "to_name": "mp.main_pipeline", "lineno": 109, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": false, "to_id": "9e66814d075bad7741b081213bfb7cf0eb81044e"}
 {"type": "CALLS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_name": "__import__", "lineno": 3, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "50d994c195df7db53cd4df097d5b0f2f23470234", "lineno": 4}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "50d994c195df7db53cd4df097d5b0f2f23470234", "lineno": 4, "scope": "module"}
 {"type": "CALLS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_name": "sys.modules.pop", "lineno": 5, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
 {"type": "CALLS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_name": "sys.path.append", "lineno": 6, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "5c5765b0d4d8c35df2668168ced1721b59a3b969", "lineno": 8}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "a3252ef19152ff68baf3606cc2c8edd55283ec71", "lineno": 9}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "9f28dba9d16f626d06df84341c7dc9b71daa2120", "lineno": 10}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "cf6d540189afa89c7d1a3fb9c386821d2a12e8a7", "lineno": 11}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "2757b27b65d2d22226b5c9cd61c7a6db5b51ca43", "lineno": 12}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "0ca36e75669d88226db5cb4946e9d170c869a7c3", "lineno": 13}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "53608952b1c2a45ab39a7f55b011adc7f0d82fb5", "lineno": 14}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "01a2e135ffdd24efb9eba642d580191b38f8df2c", "lineno": 15}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "f809e7d459235ff34a228ccddfe1f6e481c4f495", "lineno": 17}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "2927d28da155a7e72a1db2ee292349ab18b455b2", "lineno": 18}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "5f5a5442bc79ebc3c2326abcb9970ea95a864332", "lineno": 19}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "ffb7fd70f451cafed5adf7f49e754314aebc52af", "lineno": 20}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "2272a9644b54088020d91a207d3e90f18f2a68dc", "lineno": 21}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "410f2569304531da0a5c36e5dd9c7c60c078455f", "lineno": 22}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "4159472bdeae96a67d4253e5adb5ca75581107f6", "lineno": 23}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "32637bfe29784d1a5fe5df538da909eef1d3656d", "lineno": 25}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "6db032c5f47644455f63d8a56ad90419bba7f8d5", "lineno": 26}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "e21fb5af8b602171fc1d083a5e325c6efb7750c0", "lineno": 27}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "510ef5615a3e63a37e42eb6d71e62c2af2713804", "lineno": 28}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "1fad7fa939c8980aa3b0d308ac7fc6cc1bdaf8ab", "lineno": 29}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "f6a63ea4368cdeac97fcaa01ad6b7e41e9e2e8b5", "lineno": 31}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "63da18dc2bac0f18ed4c70cdb8b93e462f4d5b98", "lineno": 32}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "c219d7431a667a5eba0e1154a2531a71044d2ad7", "lineno": 32}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "1d44eda3ee4210aa6b4c75bf03a5b103ca43319d", "lineno": 34}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "684ca014f599ba4eeff2f96b59bbadfb5c49d5c3", "lineno": 35}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "1a8297798f1368e317cec31e6d650e9e54cbb59e", "lineno": 35}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "242b5539bac9fe4ce5d4f5e56bcd547e66581760", "lineno": 35}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "e11709656286385ebf5142bb7e710b51d84c6fdc", "lineno": 35}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "3c650e729607eabcfca5964f41fba6edc63b6808", "lineno": 35}
-{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "459684abbcd1fb2f9dd817904ce6ddbece8911ec", "lineno": 35}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "5c5765b0d4d8c35df2668168ced1721b59a3b969", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "a3252ef19152ff68baf3606cc2c8edd55283ec71", "lineno": 9, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "9f28dba9d16f626d06df84341c7dc9b71daa2120", "lineno": 10, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "cf6d540189afa89c7d1a3fb9c386821d2a12e8a7", "lineno": 11, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "2757b27b65d2d22226b5c9cd61c7a6db5b51ca43", "lineno": 12, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "0ca36e75669d88226db5cb4946e9d170c869a7c3", "lineno": 13, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "53608952b1c2a45ab39a7f55b011adc7f0d82fb5", "lineno": 14, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "01a2e135ffdd24efb9eba642d580191b38f8df2c", "lineno": 15, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "f809e7d459235ff34a228ccddfe1f6e481c4f495", "lineno": 17, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "2927d28da155a7e72a1db2ee292349ab18b455b2", "lineno": 18, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "5f5a5442bc79ebc3c2326abcb9970ea95a864332", "lineno": 19, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "ffb7fd70f451cafed5adf7f49e754314aebc52af", "lineno": 20, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "2272a9644b54088020d91a207d3e90f18f2a68dc", "lineno": 21, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "410f2569304531da0a5c36e5dd9c7c60c078455f", "lineno": 22, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "4159472bdeae96a67d4253e5adb5ca75581107f6", "lineno": 23, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "32637bfe29784d1a5fe5df538da909eef1d3656d", "lineno": 25, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "6db032c5f47644455f63d8a56ad90419bba7f8d5", "lineno": 26, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "e21fb5af8b602171fc1d083a5e325c6efb7750c0", "lineno": 27, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "510ef5615a3e63a37e42eb6d71e62c2af2713804", "lineno": 28, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "1fad7fa939c8980aa3b0d308ac7fc6cc1bdaf8ab", "lineno": 29, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "f6a63ea4368cdeac97fcaa01ad6b7e41e9e2e8b5", "lineno": 31, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "63da18dc2bac0f18ed4c70cdb8b93e462f4d5b98", "lineno": 32, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "c219d7431a667a5eba0e1154a2531a71044d2ad7", "lineno": 32, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "1d44eda3ee4210aa6b4c75bf03a5b103ca43319d", "lineno": 34, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "684ca014f599ba4eeff2f96b59bbadfb5c49d5c3", "lineno": 35, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "1a8297798f1368e317cec31e6d650e9e54cbb59e", "lineno": 35, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "242b5539bac9fe4ce5d4f5e56bcd547e66581760", "lineno": 35, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "e11709656286385ebf5142bb7e710b51d84c6fdc", "lineno": 35, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "3c650e729607eabcfca5964f41fba6edc63b6808", "lineno": 35, "scope": "module"}
+{"type": "IMPORTS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "459684abbcd1fb2f9dd817904ce6ddbece8911ec", "lineno": 35, "scope": "module"}
 {"type": "CALLS", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_name": "load_dotenv", "lineno": 38, "resolved_name": "dotenv.load_dotenv", "num_args": 0, "num_kwargs": 0, "inferred": true}
 {"type": "DEFINES", "from_id": "b5393f41eb6c2612b0e37ce592ced1b1b2977937", "to_id": "7230eed7da8126d77db4d2846be75bf60e5f6b50", "relationship": "contains_class"}
 {"type": "DEFINES", "from_id": "7230eed7da8126d77db4d2846be75bf60e5f6b50", "to_id": "bb082dd530b160bb6bbc24311c348098c6815936", "relationship": "contains_method"}
@@ -1226,24 +1225,24 @@
 {"type": "RETURNS", "from_id": "53a53baf8a4028540a09717fd4a5919f4e0fcbb9", "to_name": "'\\n'.join(unique_references)", "lineno": 449}
 {"type": "CALLS", "from_id": "53a53baf8a4028540a09717fd4a5919f4e0fcbb9", "to_name": "join", "lineno": 449, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
 {"type": "CALLS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_name": "__import__", "lineno": 3, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "3b7975fc9e86db0381cb48c435dee0252d11bdc1", "lineno": 4}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "3b7975fc9e86db0381cb48c435dee0252d11bdc1", "lineno": 4, "scope": "module"}
 {"type": "CALLS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_name": "sys.modules.pop", "lineno": 5, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
 {"type": "CALLS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_name": "sys.path.append", "lineno": 6, "resolved_name": null, "num_args": 1, "num_kwargs": 0, "inferred": true}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "2af23cf8798b1ac876dc99ded57c803b9e7a5a69", "lineno": 8}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "f5cd4ca23ee9ecf77a11b1240daea41bac2d487c", "lineno": 9}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "7409252ea0cbf7382e40644a717a3b2b8b2f3878", "lineno": 10}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "e8ff393360ad87dcca3e8fd9bc590d805a2db801", "lineno": 11}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "d38101faab79f1e3229cef64b234c5fbf3090b84", "lineno": 13}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "9b7829c79c156e51238afd17afa18b49158b2631", "lineno": 15}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "4d691dc5144c06fe2ca72d604dd169343513f0a2", "lineno": 16}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "6e5dc56fd6c95a25eae38b5d6b88d0de475d64ed", "lineno": 17}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "d5e4985994db67b8ef54445b6030ad35f0c90907", "lineno": 19}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "c44282eadd912f5db84041e0d4f5a0e759850e0e", "lineno": 20}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "1d1e2b584bf0f4d29826bffbfc049ae144f4d9cf", "lineno": 21}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "e18bc412fe781a769f5361dbe2e12d4d250434d8", "lineno": 23}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "401a06461105771f4de4b515ac1cadeaff7fee79", "lineno": 24}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "f85f7a7e41f6d19bd4b5d5fe56166406075325a6", "lineno": 24}
-{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "839a3a84c7b88441d0a792e48b50e7522eb2a593", "lineno": 25}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "2af23cf8798b1ac876dc99ded57c803b9e7a5a69", "lineno": 8, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "f5cd4ca23ee9ecf77a11b1240daea41bac2d487c", "lineno": 9, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "7409252ea0cbf7382e40644a717a3b2b8b2f3878", "lineno": 10, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "e8ff393360ad87dcca3e8fd9bc590d805a2db801", "lineno": 11, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "d38101faab79f1e3229cef64b234c5fbf3090b84", "lineno": 13, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "9b7829c79c156e51238afd17afa18b49158b2631", "lineno": 15, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "4d691dc5144c06fe2ca72d604dd169343513f0a2", "lineno": 16, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "6e5dc56fd6c95a25eae38b5d6b88d0de475d64ed", "lineno": 17, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "d5e4985994db67b8ef54445b6030ad35f0c90907", "lineno": 19, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "c44282eadd912f5db84041e0d4f5a0e759850e0e", "lineno": 20, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "1d1e2b584bf0f4d29826bffbfc049ae144f4d9cf", "lineno": 21, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "e18bc412fe781a769f5361dbe2e12d4d250434d8", "lineno": 23, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "401a06461105771f4de4b515ac1cadeaff7fee79", "lineno": 24, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "f85f7a7e41f6d19bd4b5d5fe56166406075325a6", "lineno": 24, "scope": "module"}
+{"type": "IMPORTS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "839a3a84c7b88441d0a792e48b50e7522eb2a593", "lineno": 25, "scope": "module"}
 {"type": "CALLS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_name": "load_dotenv", "lineno": 28, "resolved_name": "dotenv.load_dotenv", "num_args": 0, "num_kwargs": 0, "inferred": true}
 {"type": "DEFINES", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "f5e0b0f082a83c362bff86ac147bf65c330bedc5", "relationship": "defines_variable"}
 {"type": "CALLS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_name": "AttributeInfo", "lineno": 31, "resolved_name": "langchain.chains.query_constructor.schema.AttributeInfo", "num_args": 0, "num_kwargs": 3, "inferred": true}
@@ -1355,4 +1354,4 @@
 {"type": "DEFINES", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_id": "99d017b5e44dc6b6bf875ed663762c56fd09d52a", "relationship": "defines_variable"}
 {"type": "CALLS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_name": "SelfQueryPipeline", "lineno": 273, "resolved_name": null, "num_args": 0, "num_kwargs": 1, "inferred": false, "to_id": "de1cb5ab38e5bd115b9d0282d94dff6ec4a78604"}
 {"type": "CALLS", "from_id": "25dd69ec615e9d650d93ed150c5000d9e4d26f6e", "to_name": "mp.main_pipeline", "lineno": 274, "resolved_name": null, "num_args": 0, "num_kwargs": 0, "inferred": false, "to_id": "99d017b5e44dc6b6bf875ed663762c56fd09d52a"}
-{"type": "IMPORTS", "from_id": "0ec20701efbc6a87cdf754102bb336f3750c77b3", "to_id": "be260417dc4bbcacdbc21fdb0c8a82a1a26e0137", "lineno": 1}
+{"type": "IMPORTS", "from_id": "0ec20701efbc6a87cdf754102bb336f3750c77b3", "to_id": "be260417dc4bbcacdbc21fdb0c8a82a1a26e0137", "lineno": 1, "scope": "module"}

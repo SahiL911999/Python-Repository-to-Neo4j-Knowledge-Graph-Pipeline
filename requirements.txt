@@ -1,0 +1,75 @@
+# Repository Analyzer - Production Requirements
+# Core Python dependencies for repository analysis and Neo4j knowledge graph generation
+
+# ============================================================================
+# CORE ANALYSIS DEPENDENCIES
+# ============================================================================
+
+# Neo4j Database Driver - Graph database connectivity
+neo4j>=5.0.0,<6.0.0
+
+# OpenAI API Client - Semantic embeddings generation
+openai>=1.0.0,<2.0.0
+
+# Environment Configuration - Secure credential management
+python-dotenv>=1.0.0,<2.0.0
+
+# ============================================================================
+# PYTHON STANDARD LIBRARY EXTENSIONS
+# ============================================================================
+
+# Enhanced Path Handling (Python 3.4+ pathlib backport compatibility)
+pathlib2>=2.3.0; python_version < "3.4"
+
+# Type Checking Support (for older Python versions)
+typing-extensions>=4.0.0; python_version < "3.8"
+
+# ============================================================================
+# DATA PROCESSING & SERIALIZATION
+# ============================================================================
+
+# JSON Lines Processing - Efficient streaming data format
+jsonlines>=3.0.0,<4.0.0
+
+# Enhanced JSON Processing
+ujson>=5.0.0,<6.0.0
+
+# ============================================================================
+# DEVELOPMENT & TESTING (Optional)
+# ============================================================================
+
+# Code Quality & Linting
+black>=23.0.0,<24.0.0
+flake8>=6.0.0,<7.0.0
+mypy>=1.0.0,<2.0.0
+
+# Testing Framework
+pytest>=7.0.0,<8.0.0
+pytest-cov>=4.0.0,<5.0.0
+
+# ============================================================================
+# PERFORMANCE & MONITORING (Optional)
+# ============================================================================
+
+# Progress Bars for Long Operations
+tqdm>=4.60.0,<5.0.0
+
+# Memory Profiling
+memory-profiler>=0.60.0,<1.0.0
+
+# ============================================================================
+# DOCUMENTATION (Optional)
+# ============================================================================
+
+# Documentation Generation
+sphinx>=5.0.0,<6.0.0
+sphinx-rtd-theme>=1.0.0,<2.0.0
+
+# ============================================================================
+# MINIMUM PYTHON VERSION REQUIREMENT
+# ============================================================================
+# Python 3.8+ required for:
+# - ast.get_source_segment() (Python 3.8+)
+# - Walrus operator support (:=)
+# - Positional-only parameters
+# - Enhanced typing support

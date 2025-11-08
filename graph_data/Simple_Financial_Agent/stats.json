@@ -1,0 +1,16 @@
+{
+  "repository": "/home/sahil/Workspace/Source Wall/Simple_Financial_Agent",
+  "repository_name": "Simple_Financial_Agent",
+  "total_files": 5,
+  "files_processed": 5,
+  "files_with_errors": 0,
+  "total_directories": 1,
+  "total_functions": 2,
+  "total_methods": 9,
+  "total_classes": 3,
+  "total_imports": 32,
+  "total_calls": 117,
+  "total_variables": 52,
+  "total_decorators": 0,
+  "analysis_timestamp": "2025-11-07T12:36:26.937914"
+}
